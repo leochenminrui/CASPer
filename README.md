@@ -1,9 +1,5 @@
 # CASPer: Site-Conditioned Edit Chemistry for Cyclic Peptide Permeability Modeling
 
-> **Paper:** "Site-Conditioned Edit Chemistry for Cyclic Peptide Permeability Modeling"
->
-> **Scope:** Known-site descriptor decomposition — NOT a SOTA leaderboard.
-
 ## 1. Project Overview
 
 Cyclic peptides with non-canonical amino acid (ncAA) modifications are promising drug candidates, but predicting how specific chemical modifications affect membrane permeability requires knowing both *what* the modification is and *where* it is attached.
