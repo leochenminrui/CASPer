@@ -1,0 +1,17 @@
+{
+  "feature_set": "Context",
+  "estimator": "ridge",
+  "family": "linear",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 1.0570774673311187,
+    "mae": 0.7020176538348393,
+    "r2": 0.14388901463261417,
+    "spearman": 0.452013402714027
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.038496108683615554
+  },
+  "needs_scale": true
+}

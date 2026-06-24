@@ -1,0 +1,76 @@
+# Quick Benchmark Configuration
+# For fast validation: 10 Optuna trials, 3 seeds, random split only
+# Use this for development and quick checks
+
+benchmark:
+  name: "CASPer Benchmark — Quick"
+  version: "1.0.0"
+  description: "Quick benchmark for development and sanity checks"
+
+  splits:
+    - random
+
+  seeds: [0, 1, 2]
+  n_trials: 10
+
+  models:
+    include:
+      # Internal baselines
+      - seq_aa_xgb
+      - position_only_xgb
+      # Primary paper models
+      - chem_A_xgb
+      - chem_site_AB_xgb
+      - full_ABC_xgb
+      # Ablation/control models (subset)
+      - site_B_xgb
+      - context_C_xgb
+      - site_context_BC_xgb
+      - chem_context_AC_xgb
+      - chem_B1_xgb
+      - chem_B2_xgb
+      - chem_B3_xgb
+      # Generic benchmarks
+      - ecfp_xgb
+      - rdkit_full_xgb
+    exclude: []
+
+optuna:
+  pruner: "median"
+  n_startup_trials: 3
+  n_warmup_steps: 0
+  seed: 42
+
+xgboost:
+  search_space:
+    n_estimators: [200, 2000]
+    max_depth: [2, 10]
+    learning_rate: [0.005, 0.2]
+    subsample: [0.5, 1.0]
+    colsample_bytree: [0.5, 1.0]
+    min_child_weight: [1, 20]
+    reg_alpha: [1e-8, 10.0]
+    reg_lambda: [1e-8, 100.0]
+    gamma: [0.0, 10.0]
+  fixed_params:
+    tree_method: "hist"
+    early_stopping_rounds: 50
+    verbosity: 0
+    n_jobs: -1
+    random_state: null  # set per-seed
+
+random_forest:
+  search_space:
+    n_estimators: [100, 1000]
+    max_depth: [5, 30]
+    min_samples_split: [2, 20]
+    min_samples_leaf: [1, 10]
+    max_features: ["sqrt", "log2", null]
+  fixed_params:
+    n_jobs: -1
+
+output:
+  base_dir: "results/benchmark"
+  save_predictions: true
+  save_models: false
+  save_optuna_db: true

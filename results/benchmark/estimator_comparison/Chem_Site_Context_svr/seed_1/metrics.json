@@ -1,0 +1,19 @@
+{
+  "feature_set": "Chem+Site+Context",
+  "estimator": "svr",
+  "family": "kernel",
+  "seed": 1,
+  "test_metrics": {
+    "rmse": 0.88755302275899,
+    "mae": 0.4786685040197379,
+    "r2": 0.3964613964629763,
+    "spearman": 0.7602419561086545
+  },
+  "hpo": true,
+  "best_params": {
+    "C": 3.371962906703153,
+    "gamma": 0.01508029863308994,
+    "epsilon": 0.0012971443227692094
+  },
+  "needs_scale": true
+}

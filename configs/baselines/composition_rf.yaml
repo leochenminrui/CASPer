@@ -1,0 +1,24 @@
+name: "composition_rf"
+category: "sequence_only"
+version: "1.0.0"
+
+featurizer: "composition"
+featurizer_params:
+  use_aa_composition: true
+  use_property_composition: true
+  use_basic_features: true
+  use_dipeptide: false
+
+model_type: "random_forest"
+model_params:
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 2
+  min_samples_leaf: 1
+  max_features: "sqrt"
+  n_jobs: -1
+
+random_seed: 42
+n_seeds: 5
+validation_metric: "rmse"
+minimize_metric: true

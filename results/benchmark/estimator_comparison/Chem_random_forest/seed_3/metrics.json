@@ -1,0 +1,20 @@
+{
+  "feature_set": "Chem",
+  "estimator": "random_forest",
+  "family": "tree",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 0.8889179715197129,
+    "mae": 0.5437756311315919,
+    "r2": 0.39460363089985884,
+    "spearman": 0.6933740284914947
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 403,
+    "max_depth": 20,
+    "min_samples_split": 2,
+    "min_samples_leaf": 9
+  },
+  "needs_scale": false
+}

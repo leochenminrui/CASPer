@@ -1,0 +1,17 @@
+{
+  "feature_set": "Chem+Site+Context",
+  "estimator": "ridge",
+  "family": "linear",
+  "seed": 0,
+  "test_metrics": {
+    "rmse": 1.036339261479643,
+    "mae": 0.6678606449154461,
+    "r2": 0.1771506279402979,
+    "spearman": 0.5462495695571561
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.05330265674329515
+  },
+  "needs_scale": true
+}

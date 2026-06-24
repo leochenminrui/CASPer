@@ -1,0 +1,24 @@
+{
+  "feature_set": "Site+Context",
+  "estimator": "xgboost",
+  "family": "tree",
+  "seed": 1,
+  "test_metrics": {
+    "rmse": 0.8942111677796178,
+    "mae": 0.5620604814279033,
+    "r2": 0.3873723166842108,
+    "spearman": 0.6786869656076076
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 274,
+    "max_depth": 7,
+    "learning_rate": 0.031885271321544575,
+    "subsample": 0.9285925084266666,
+    "colsample_bytree": 0.5692705286685923,
+    "min_child_weight": 3,
+    "reg_alpha": 0.9228361054935057,
+    "reg_lambda": 3.724448774495503
+  },
+  "needs_scale": false
+}

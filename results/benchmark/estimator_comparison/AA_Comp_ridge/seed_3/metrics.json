@@ -1,0 +1,17 @@
+{
+  "feature_set": "AA Comp",
+  "estimator": "ridge",
+  "family": "linear",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 1.065069245434961,
+    "mae": 0.7167764104018136,
+    "r2": 0.1308952420651437,
+    "spearman": 0.34483646772611376
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 1669.878413270407
+  },
+  "needs_scale": true
+}

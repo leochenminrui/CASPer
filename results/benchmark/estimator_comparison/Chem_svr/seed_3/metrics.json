@@ -1,0 +1,19 @@
+{
+  "feature_set": "Chem",
+  "estimator": "svr",
+  "family": "kernel",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 0.9122070525545486,
+    "mae": 0.5055587083815904,
+    "r2": 0.3624660893591337,
+    "spearman": 0.7315434727508554
+  },
+  "hpo": true,
+  "best_params": {
+    "C": 52.652584538839214,
+    "gamma": 0.0521115407011364,
+    "epsilon": 0.19309926858465254
+  },
+  "needs_scale": true
+}

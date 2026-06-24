@@ -1,0 +1,19 @@
+{
+  "feature_set": "Site",
+  "estimator": "svr",
+  "family": "kernel",
+  "seed": 4,
+  "test_metrics": {
+    "rmse": 0.9756201322466789,
+    "mae": 0.5899639888472706,
+    "r2": 0.27074746761997437,
+    "spearman": 0.6415710533988476
+  },
+  "hpo": true,
+  "best_params": {
+    "C": 69.25321391909104,
+    "gamma": 0.019881005712415068,
+    "epsilon": 0.20116225480198846
+  },
+  "needs_scale": true
+}

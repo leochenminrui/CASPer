@@ -1,0 +1,17 @@
+{
+  "feature_set": "Site+Context",
+  "estimator": "ridge",
+  "family": "linear",
+  "seed": 0,
+  "test_metrics": {
+    "rmse": 1.0348311846095328,
+    "mae": 0.6790977144595082,
+    "r2": 0.17954369990161156,
+    "spearman": 0.5150624895431626
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.013602826628709637
+  },
+  "needs_scale": true
+}

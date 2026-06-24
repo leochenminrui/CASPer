@@ -1,0 +1,13 @@
+{
+  "strategy": "sequence_cluster",
+  "identity_threshold": 0.7,
+  "n_total": 7224,
+  "n_unique_sequences": 1329,
+  "n_clusters": 1016,
+  "train": 3333,
+  "val": 1876,
+  "test": 2015,
+  "n_train_clusters": 662,
+  "n_val_clusters": 109,
+  "n_test_clusters": 245
+}

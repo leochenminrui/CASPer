@@ -1,0 +1,18 @@
+{
+  "feature_set": "Chem+Site+Context",
+  "estimator": "elasticnet",
+  "family": "linear",
+  "seed": 0,
+  "test_metrics": {
+    "rmse": 1.0360609923216428,
+    "mae": 0.6677990845345033,
+    "r2": 0.17759245788806632,
+    "spearman": 0.54637625126553
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 1.8159689125085955e-05,
+    "l1_ratio": 0.4971570325722281
+  },
+  "needs_scale": true
+}

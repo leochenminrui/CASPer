@@ -1,0 +1,17 @@
+{
+  "dataset": "CycPeptMPDB_PAMPA",
+  "total_samples": 7224,
+  "strategies": {
+    "random": {
+      "feasible": true,
+      "train_count": 5056,
+      "val_count": 1084,
+      "test_count": 1084,
+      "leakage_risk": "high"
+    }
+  },
+  "successful_strategies": [
+    "random"
+  ],
+  "recommended_strategy": "random"
+}

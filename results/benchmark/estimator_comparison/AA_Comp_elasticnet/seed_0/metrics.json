@@ -1,0 +1,18 @@
+{
+  "feature_set": "AA Comp",
+  "estimator": "elasticnet",
+  "family": "linear",
+  "seed": 0,
+  "test_metrics": {
+    "rmse": 1.066312624357332,
+    "mae": 0.7179172280845127,
+    "r2": 0.12886484392462783,
+    "spearman": 0.34412373516108524
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.1423737517065531,
+    "l1_ratio": 0.08900848296484615
+  },
+  "needs_scale": true
+}

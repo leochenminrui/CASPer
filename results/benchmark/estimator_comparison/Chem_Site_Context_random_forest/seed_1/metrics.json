@@ -1,0 +1,20 @@
+{
+  "feature_set": "Chem+Site+Context",
+  "estimator": "random_forest",
+  "family": "tree",
+  "seed": 1,
+  "test_metrics": {
+    "rmse": 0.8393790183789641,
+    "mae": 0.5042536941937711,
+    "r2": 0.46020027735547464,
+    "spearman": 0.7437850472606167
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 231,
+    "max_depth": 20,
+    "min_samples_split": 8,
+    "min_samples_leaf": 4
+  },
+  "needs_scale": false
+}

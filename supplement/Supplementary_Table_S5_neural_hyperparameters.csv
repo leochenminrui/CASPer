@@ -1,0 +1,22 @@
+Model_Variant,Hyperparameter,Value,Search_Method,Search_Space,Trials,Selection_Criterion,Notes
+XGBoost Composition,max_depth,6,Optuna,"[3, 10]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Composition,n_estimators,100,Optuna,"[50, 300]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Composition,learning_rate,0.1,Optuna,"[0.01, 0.3] log",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Composition,subsample,0.8,Optuna,"[0.6, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Composition,colsample_bytree,0.8,Optuna,"[0.6, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Composition,reg_alpha,0.0,Optuna,"[0.0, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Composition,reg_lambda,1.0,Optuna,"[0.0, 2.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,max_depth,6,Optuna,"[3, 10]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,n_estimators,100,Optuna,"[50, 300]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,learning_rate,0.1,Optuna,"[0.01, 0.3] log",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,subsample,0.8,Optuna,"[0.6, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,colsample_bytree,0.8,Optuna,"[0.6, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,reg_alpha,0.0,Optuna,"[0.0, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Descriptor-only,reg_lambda,1.0,Optuna,"[0.0, 2.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,max_depth,6,Optuna,"[3, 10]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,n_estimators,100,Optuna,"[50, 300]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,learning_rate,0.1,Optuna,"[0.01, 0.3] log",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,subsample,0.8,Optuna,"[0.6, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,colsample_bytree,0.8,Optuna,"[0.6, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,reg_alpha,0.0,Optuna,"[0.0, 1.0]",50-100,Validation RMSE,Systematic hyperparameter optimization
+XGBoost Anchor-aware,reg_lambda,1.0,Optuna,"[0.0, 2.0]",50-100,Validation RMSE,Systematic hyperparameter optimization

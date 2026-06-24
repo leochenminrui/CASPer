@@ -1,0 +1,47 @@
+# Composition + XGBoost Baseline
+# Category: Sequence-Only
+# Information: Sequence composition only
+
+name: "composition_xgboost"
+category: "sequence_only"
+version: "1.0.0"
+
+# Featurization
+featurizer: "composition"
+featurizer_params:
+  use_aa_composition: true
+  use_property_composition: true
+  use_basic_features: true
+  use_dipeptide: false  # Set to true for higher capacity
+
+# Model
+model_type: "xgboost"
+model_params:
+  max_depth: 6
+  n_estimators: 100
+  learning_rate: 0.1
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_alpha: 0.0
+  reg_lambda: 1.0
+  min_child_weight: 1
+  tree_method: "hist"
+
+# Training
+random_seed: 42
+n_seeds: 5  # Train with 5 different seeds
+batch_size: 32
+max_epochs: 100
+early_stopping_patience: 10
+
+# Evaluation
+validation_metric: "rmse"
+minimize_metric: true
+
+# Information matching
+use_edit_count: false
+use_edit_families: false
+
+# Hyperparameter tuning
+tune_hyperparameters: false
+tuning_trials: 50

@@ -1,0 +1,20 @@
+{
+  "feature_set": "AA Comp",
+  "estimator": "random_forest",
+  "family": "tree",
+  "seed": 4,
+  "test_metrics": {
+    "rmse": 0.9851840154015021,
+    "mae": 0.6506180783184614,
+    "r2": 0.2563798448351233,
+    "spearman": 0.5254249460761989
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 384,
+    "max_depth": 14,
+    "min_samples_split": 7,
+    "min_samples_leaf": 2
+  },
+  "needs_scale": false
+}

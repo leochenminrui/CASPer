@@ -1,0 +1,20 @@
+{
+  "feature_set": "Site",
+  "estimator": "random_forest",
+  "family": "tree",
+  "seed": 4,
+  "test_metrics": {
+    "rmse": 0.9382636110515091,
+    "mae": 0.6052553817621475,
+    "r2": 0.325524489693911,
+    "spearman": 0.6143281103434252
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 226,
+    "max_depth": 17,
+    "min_samples_split": 14,
+    "min_samples_leaf": 3
+  },
+  "needs_scale": false
+}

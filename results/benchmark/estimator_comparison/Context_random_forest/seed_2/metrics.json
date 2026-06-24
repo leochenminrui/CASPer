@@ -1,0 +1,20 @@
+{
+  "feature_set": "Context",
+  "estimator": "random_forest",
+  "family": "tree",
+  "seed": 2,
+  "test_metrics": {
+    "rmse": 0.9761459691530745,
+    "mae": 0.6300804883838919,
+    "r2": 0.26996115494942474,
+    "spearman": 0.5521895559083044
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 109,
+    "max_depth": 9,
+    "min_samples_split": 13,
+    "min_samples_leaf": 2
+  },
+  "needs_scale": false
+}

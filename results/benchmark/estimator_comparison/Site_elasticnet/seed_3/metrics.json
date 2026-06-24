@@ -1,0 +1,18 @@
+{
+  "feature_set": "Site",
+  "estimator": "elasticnet",
+  "family": "linear",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 1.0555128862253924,
+    "mae": 0.7004766448465485,
+    "r2": 0.14642140009967153,
+    "spearman": 0.4241221200204761
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.007042394297244725,
+    "l1_ratio": 0.020834354496313406
+  },
+  "needs_scale": true
+}

@@ -1,0 +1,17 @@
+{
+  "feature_set": "Chem",
+  "estimator": "ridge",
+  "family": "linear",
+  "seed": 4,
+  "test_metrics": {
+    "rmse": 1.0793307803598822,
+    "mae": 0.697682831850465,
+    "r2": 0.10746436678138227,
+    "spearman": 0.47395277628812654
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.039667133279122746
+  },
+  "needs_scale": true
+}

@@ -1,0 +1,7 @@
+model_id,role,random_RMSE_mean_sd,random_R2_mean_sd,random_Spearman_mean_sd,cluster_RMSE_mean_sd,cluster_R2_mean_sd,cluster_Spearman_mean_sd,delta_R2,delta_Spearman,n_seeds_random,n_seeds_cluster,hpo
+seq_aa_xgb,internal_baseline,0.9845±0.0037,0.2574±0.0056,0.5260±0.0052,1.0553±0.0364,0.0379±0.0666,0.2964±0.0577,-0.2195,-0.2296,5,5,True
+chem_A_xgb,primary_paper,0.8660±0.0073,0.4253±0.0097,0.7144±0.0074,0.9362±0.0066,0.2435±0.0106,0.5863±0.0064,-0.1819,-0.1281,5,5,True
+chem_site_AB_xgb,primary_paper,0.8502±0.0160,0.4460±0.0209,0.7323±0.0108,0.9178±0.0115,0.2728±0.0182,0.6024±0.0165,-0.1732,-0.1299,5,5,True
+full_ABC_xgb,primary_paper,0.8344±0.0044,0.4665±0.0056,0.7395±0.0060,0.9310±0.0263,0.2513±0.0428,0.5703±0.0351,-0.2152,-0.1692,5,5,True
+ecfp_xgb,generic_benchmark,0.8892±0.0044,0.3942±0.0060,0.7272±0.0034,0.9688±0.0219,0.1895±0.0365,0.5642±0.0411,-0.2047,-0.1630,5,5,True
+rdkit_full_xgb,generic_benchmark,0.8905±0.0113,0.3924±0.0153,0.7174±0.0056,0.9966±0.0412,0.1416±0.0711,0.4977±0.0955,-0.2507,-0.2197,5,5,True

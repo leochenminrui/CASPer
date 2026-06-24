@@ -1,0 +1,19 @@
+{
+  "feature_set": "Context",
+  "estimator": "svr",
+  "family": "kernel",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 1.0414847780740697,
+    "mae": 0.6168621829726006,
+    "r2": 0.1689593023528504,
+    "spearman": 0.551407360183311
+  },
+  "hpo": true,
+  "best_params": {
+    "C": 21.04468642256504,
+    "gamma": 0.2644568362641103,
+    "epsilon": 0.006638082465231001
+  },
+  "needs_scale": true
+}

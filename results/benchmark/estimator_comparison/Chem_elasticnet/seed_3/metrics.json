@@ -1,0 +1,18 @@
+{
+  "feature_set": "Chem",
+  "estimator": "elasticnet",
+  "family": "linear",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 1.0794474875779188,
+    "mae": 0.6979757102829325,
+    "r2": 0.10727133794479748,
+    "spearman": 0.47284841215998
+  },
+  "hpo": true,
+  "best_params": {
+    "alpha": 0.00023181660056024504,
+    "l1_ratio": 0.9390236459018803
+  },
+  "needs_scale": true
+}

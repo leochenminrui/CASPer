@@ -1,0 +1,24 @@
+{
+  "feature_set": "AA Comp",
+  "estimator": "xgboost",
+  "family": "tree",
+  "seed": 0,
+  "test_metrics": {
+    "rmse": 0.9816919418231999,
+    "mae": 0.6456662314838352,
+    "r2": 0.26164215928958434,
+    "spearman": 0.5300413400718395
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 624,
+    "max_depth": 7,
+    "learning_rate": 0.012478931529469339,
+    "subsample": 0.7277596932028274,
+    "colsample_bytree": 0.6035410812685298,
+    "min_child_weight": 5,
+    "reg_alpha": 0.00013345216624201353,
+    "reg_lambda": 0.0001287573503775545
+  },
+  "needs_scale": false
+}

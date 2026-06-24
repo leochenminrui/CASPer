@@ -1,0 +1,24 @@
+{
+  "feature_set": "Context",
+  "estimator": "xgboost",
+  "family": "tree",
+  "seed": 3,
+  "test_metrics": {
+    "rmse": 0.9715804875924813,
+    "mae": 0.6242871024652704,
+    "r2": 0.2767740389637926,
+    "spearman": 0.5691618336880182
+  },
+  "hpo": true,
+  "best_params": {
+    "n_estimators": 474,
+    "max_depth": 5,
+    "learning_rate": 0.022290118614732225,
+    "subsample": 0.8797149982928479,
+    "colsample_bytree": 0.8772474196665954,
+    "min_child_weight": 6,
+    "reg_alpha": 0.0015684249136172842,
+    "reg_lambda": 0.0003728031849345202
+  },
+  "needs_scale": false
+}

@@ -1,0 +1,6 @@
+model_id,method,top_feature_1,top_feature_2,top_feature_3,dominant_group,dominant_group_frac
+chem_A_xgb,SHAP TreeExplainer,logp,mol_weight,tpsa,A_Chem,1.000
+chem_site_AB_xgb,SHAP TreeExplainer,logp,anchor_c_terminal_count,anchor_pos_std,A_Chem,0.428
+full_ABC_xgb,SHAP TreeExplainer,edit_n_methylation,logp,anchor_pos_std,A_Chem,0.329
+ecfp_xgb,SHAP TreeExplainer,ecfp_1118,ecfp_340,ecfp_1345,Other,0.956
+rdkit_full_xgb,SHAP TreeExplainer,rdkit_VSA_EState9,rdkit_VSA_EState8,rdkit_VSA_EState2,B2_ResidueComp,0.608
