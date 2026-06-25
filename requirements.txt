@@ -22,6 +22,7 @@ shap>=0.40.0
 # Data handling
 pyyaml>=5.4.1
 pyarrow>=10.0.0
+pydantic>=2.0.0         # required by src/data/pem_schema.py (PEMSample)
 
 # Visualization
 matplotlib>=3.4.0
