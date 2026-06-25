@@ -21,13 +21,13 @@ The study is a **descriptor-level contribution analysis**, not a competition for
 
 | Model | Features | R² | RMSE | Spearman ρ |
 |-------|----------|-----|------|------------|
-| Sequence-only | AA composition (33 dim) | 0.2635 ± 0.0019 | 0.980 ± 0.001 | 0.521 ± 0.003 |
-| Chemistry-only | Group A (10 dim) | 0.4327 ± 0.0042 | 0.860 ± 0.003 | 0.718 ± 0.003 |
-| **Site-conditioned** | **Groups A+B+C (73 dim)** | **0.4717 ± 0.0019** | **0.830 ± 0.001** | **0.733 ± 0.001** |
+| Sequence-only | AA composition (33 dim) | 0.2574 ± 0.0056 | 0.985 ± 0.004 | 0.526 ± 0.005 |
+| Chemistry-only | Group A (10 dim) | 0.4253 ± 0.0097 | 0.866 ± 0.007 | 0.714 ± 0.007 |
+| **Site-conditioned** | **Groups A+B+C (73 dim)** | **0.4665 ± 0.0056** | **0.834 ± 0.004** | **0.740 ± 0.006** |
 
-Chemistry vs. sequence: paired *t*-test *p* = 2.9 × 10⁻⁸. Site-conditioned vs. chemistry: Welch's *t*-test *p* = 2.6 × 10⁻⁶.
+Chemistry vs. sequence: paired *t*-test *p* = 5.1 × 10⁻⁶ (Welch's *t*-test *p* = 1.8 × 10⁻⁸). Site-conditioned (A+B+C) vs. chemistry: paired *t*-test *p* = 1.1 × 10⁻⁴. (Values recomputed on the corrected 7,224-sample, 5-seed run; they supersede earlier figures derived from a 3-seed anchor run.)
 
-On a 70% sequence-identity cluster split (novel scaffolds), chemistry descriptors retain substantial predictive power (R² ≈ 0.27), while site-aware gains diminish (ΔR² ≈ +0.002), suggesting site features are partially sequence-context-dependent.
+On a 70% sequence-identity cluster split (novel scaffolds), all models degrade: chemistry-only retains R² ≈ 0.244, while site-conditioned gains largely collapse (full A+B+C R² ≈ 0.251; only the stricter A+B descriptor remains robust at R² ≈ 0.273), suggesting site features are partially sequence-context-dependent.
 
 ---
 
@@ -43,7 +43,7 @@ On a 70% sequence-identity cluster split (novel scaffolds), chemistry descriptor
 │   ├── baselines/                    # Featurizers and model classes
 │   │   └── featurizers/              # anchor_aware_descriptors (Groups A/B/C), composition, ECFP, RDKit
 │   ├── benchmark/                    # Unified benchmark framework
-│   │   ├── registry.py               # Model registry (20+ models, 7 roles)
+│   │   ├── registry.py               # Model registry (15 models, 4 roles)
 │   │   ├── runner.py                 # Benchmark runner (identical splits/seeds/metrics)
 │   │   ├── featurizers.py            # Featurizer registry
 │   │   ├── optuna_tuner.py           # Optuna hyperparameter optimization
@@ -125,11 +125,19 @@ On a 70% sequence-identity cluster split (novel scaffolds), chemistry descriptor
 
 ```bash
 # Clone and enter the repository
-cd CASPer_re
+cd CASPer
 
 # Install core dependencies
 pip install -r requirements.txt
 ```
+
+> **External tool for the cluster split.** Regenerating the 70% sequence-identity
+> cluster split (`scripts/create_sequence_cluster_split.py`, used for Table 4 /
+> Fig 4) requires **MMseqs2** (or CD-HIT), a system bioinformatics tool that is
+> *not* a pip dependency: `conda install -c bioconda mmseqs2`. To reproduce the
+> published results you do **not** need it — use the committed splits in
+> `data/splits/CycPeptMPDB_PAMPA/sequence_cluster/`. (Without MMseqs2 the splitter
+> falls back to a simpler method that produces a *different* split.)
 
 Minimal working dependencies (for smoke test and figure regeneration):
 ```
@@ -146,7 +154,10 @@ pip install tqdm joblib
 
 ## 5. Reproduction Workflow
 
-All commands are run from the **project root**.
+All commands are run from the **project root**. The pipeline is CPU-only (XGBoost +
+Optuna; no GPU required). Reported runtimes were measured on `<TODO: fill in CPU
+model / core count / RAM used for the paper>`; scale expectations proportionally for
+other hardware.
 
 ### 5.1 Smoke Test (~15 min, uses pre-computed results)
 
@@ -318,11 +329,12 @@ python scripts/compile_final_summary.py
 
 ## 9. Citation
 
+<!-- TODO (authors): fill in author list, journal, volume/DOI before camera-ready. -->
 ```bibtex
-@article{TODO,
+@article{casper2026,
   title   = {Site-Conditioned Edit Chemistry for Cyclic Peptide Permeability Modeling},
-  author  = {TODO},
-  journal = {TODO},
+  author  = {<TODO: author list>},
+  journal = {Journal of Cheminformatics},
   year    = {2026},
 }
 ```
