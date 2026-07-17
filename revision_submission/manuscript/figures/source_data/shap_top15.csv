@@ -1,0 +1,16 @@
+representation_id,scope,rank,feature,subblock,proportion
+A+B+C,overall,1,edit_n_methylation,C,0.151045960187912
+A+B+C,overall,2,logp,A,0.1247847780585289
+A+B+C,overall,3,anchor_pos_std,B1,0.0660625830292701
+A+B+C,overall,4,num_rotatable_bonds,A,0.0643481813371181
+A+B+C,overall,5,mol_weight,A,0.042618715763092
+A+B+C,overall,6,tpsa,A,0.042165507376194
+A+B+C,overall,7,anchor_pos_mean,B1,0.0398295439779758
+A+B+C,overall,8,anchor_c_terminal_count,B3,0.0328027140349149
+A+B+C,overall,9,anchor_res_L,B2,0.0309642914682626
+A+B+C,overall,10,num_h_donors,A,0.0291462324559688
+A+B+C,overall,11,edit_d_amino_acid,C,0.0284328497946262
+A+B+C,overall,12,anchor_res_P,B2,0.025583079829812
+A+B+C,overall,13,num_aliphatic_rings,A,0.0231203317642211
+A+B+C,overall,14,anchor_density,B1,0.0227469604462385
+A+B+C,overall,15,cyclization_ring_size,C,0.0225519131869077
