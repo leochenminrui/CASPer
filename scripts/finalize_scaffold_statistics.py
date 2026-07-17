@@ -2,7 +2,7 @@
 from pathlib import Path
 import numpy as np,pandas as pd
 from scipy import stats
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/minor_revision_experiments/scaffold_ranking';d=pd.read_csv(OUT/'family_level_results.csv');rng=np.random.default_rng(20260717);rows=[]
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/final_experiments/scaffold_ranking';d=pd.read_csv(OUT/'family_level_results.csv');rng=np.random.default_rng(20260717);rows=[]
 for m,g in d.groupby('model'):
  v=g.pairwise_accuracy.dropna().to_numpy();b=np.array([rng.choice(v,len(v),replace=True).mean() for _ in range(5000)]);rows.append({'model':m,'n_families_total':g.family_id.nunique(),'n_families_with_valid_pairs':len(v),'overall_pairwise_accuracy':g.correct_pair_count.sum()/g.valid_pair_count.sum(),'mean_family_pairwise_accuracy':v.mean(),'family_bootstrap_ci95_low':np.quantile(b,.025),'family_bootstrap_ci95_high':np.quantile(b,.975),'bootstrap_replicates':5000,'bootstrap_unit':'peptide family','interval':'percentile'})
 pd.DataFrame(rows).to_csv(OUT/'summary_with_ci.csv',index=False)

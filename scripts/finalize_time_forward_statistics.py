@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd,numpy as np
 from scipy.stats import spearmanr
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/minor_revision_experiments/time_forward'
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/final_experiments/time_forward'
 c=pd.read_csv(OUT/'cutoff_statistics.csv');s=pd.read_csv(OUT/'similarity_diagnostics.csv');p=pd.read_csv(OUT/'model_performance_with_ci.csv');sp=p[p.metric=='spearman'].merge(c,on='cutoff').merge(s,on='cutoff');rows=[]
 for m,g in sp.groupby('model'):
  for x in ['median_max_tanimoto','test_n','unseen_test_edit_fraction','unseen_test_monomer_fraction']:

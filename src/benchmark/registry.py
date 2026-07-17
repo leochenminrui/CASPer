@@ -9,7 +9,7 @@ Defines every model with:
 - featurizer: which featurizer class to use
 - featurizer_kwargs: keyword args for the featurizer
 - estimator_type: xgboost / random_forest
-- purpose: one-line explanation for manuscript tables
+- purpose: one-line explanation for benchmark summaries
 - requires_external: list of dependencies that may be missing
 - hpo: whether Optuna tuning is supported
 - status: implemented / requires_external / skipped
@@ -84,7 +84,7 @@ MODEL_REGISTRY: Dict[str, ModelSpec] = {
         model_name="Site-Only (Group B) + XGBoost",
         role="ablation_control",
         purpose="Site descriptors only (Group B: position + residue + context) "
-                "without chemistry (Group A). Added per Reviewer 1 request to "
+                "without chemistry (Group A), enabling a direct test of "
                 "test whether B alone carries signal",
         featurizer="site_only",
         featurizer_kwargs={},
@@ -96,7 +96,7 @@ MODEL_REGISTRY: Dict[str, ModelSpec] = {
         model_name="Context-Only (Group C) + XGBoost",
         role="ablation_control",
         purpose="Context/attachment descriptors only (Group C) without "
-                "chemistry or anchor-site features. Added per Reviewer 1 request",
+                "chemistry or anchor-site features",
         featurizer="context_only",
         featurizer_kwargs={},
         estimator_type="xgboost",

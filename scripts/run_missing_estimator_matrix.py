@@ -23,7 +23,7 @@ def main():
       safe=f.replace(' ','_').replace('+','_')
       for e in ESTIMATORS:
        for s in range(5):
-        p=ROOT/f'results/minor_revision_experiments/raw_runs/estimator_matrix/{safe}_{e}/seed_{s}/metrics.json'
+        p=ROOT/f'results/final_experiments/raw_runs/estimator_matrix/{safe}_{e}/seed_{s}/metrics.json'
         if not valid(p): tasks.append((e,f,s))
     print(f'Missing estimator cells to execute: {len(tasks)}',flush=True)
     ok=bad=0

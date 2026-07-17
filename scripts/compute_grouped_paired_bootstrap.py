@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np,pandas as pd
 from scipy import stats
 from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/minor_revision_experiments';P=pd.read_csv(OUT/'primary_ablation/seed_level_results.csv');CL=dict(pd.read_csv(OUT/'manifest/sequence_cluster_assignments.csv').set_index('sample_id').sequence_cluster_id)
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/final_experiments';P=pd.read_csv(OUT/'primary_ablation/seed_level_results.csv');CL=dict(pd.read_csv(OUT/'manifest/sequence_cluster_assignments.csv').set_index('sample_id').sequence_cluster_id)
 PAIRS={'random':[('A+B+C','A'),('A+B','A'),('A+B+C','A+B'),('A+C','A'),('B+C','B'),('B+C','C')],'sequence_cluster':[('A+B','A'),('A+B','A+B+C'),('A+B+C','A'),('A+C','A'),('B+C','B'),('B+C','C')]}
 def met(y,p):return {'r2':r2_score(y,p),'rmse':mean_squared_error(y,p)**.5,'mae':mean_absolute_error(y,p),'spearman':stats.spearmanr(y,p).statistic}
 def job(t):

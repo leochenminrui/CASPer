@@ -23,15 +23,15 @@ def valid(path):
 
 def one(task):
     split, model, seed, cfg = task
-    return run_single_model(model, split, seed, cfg, ROOT/"results/minor_revision_experiments/raw_runs/primary_ablation", resume=True)
+    return run_single_model(model, split, seed, cfg, ROOT/"results/final_experiments/raw_runs/primary_ablation", resume=True)
 
 def main():
-    cfg=yaml.safe_load((ROOT/"configs/benchmark/minor_revision_primary.yaml").read_text())
+    cfg=yaml.safe_load((ROOT/"configs/benchmark/primary_ablation.yaml").read_text())
     tasks=[]
     for split in ("random","sequence_cluster"):
         for fs,model in MODELS.items():
             for seed in range(5):
-                p=ROOT/f"results/minor_revision_experiments/raw_runs/primary_ablation/{split}/seed_{seed}/{model}/metrics.json"
+                p=ROOT/f"results/final_experiments/raw_runs/primary_ablation/{split}/seed_{seed}/{model}/metrics.json"
                 if not valid(p): tasks.append((split,model,seed,cfg))
     print(f"Missing primary cells to execute: {len(tasks)}", flush=True)
     done=failed=0
