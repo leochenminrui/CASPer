@@ -11,6 +11,7 @@ import logging
 import traceback
 import warnings
 import sys
+import time
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 import numpy as np
@@ -96,28 +97,15 @@ def run_single_model(
         return result
 
     try:
+        run_started = time.perf_counter()
         # ── 1. Load data ─────────────────────────────────────────────────
-        from data.loader import load_pem_dataset
         dataset = "CycPeptMPDB_PAMPA"
-
-        if split_type == "sequence_cluster":
-            # Try loading cluster split; if unavailable, fall back
-            try:
-                data = load_pem_dataset(dataset, "sequence_cluster")
-            except FileNotFoundError:
-                logger.warning(
-                    f"Sequence-cluster split not found for {dataset}. "
-                    "Run scripts/create_sequence_cluster_split.py first.")
-                result = {
-                    'model_id': model_id, 'seed': seed,
-                    'split_type': split_type, 'status': 'failed',
-                    'error': 'Sequence-cluster split not available',
-                }
-                with open(metrics_file, 'w') as f:
-                    json.dump(result, f, indent=2)
-                return result
-        else:
-            data = load_pem_dataset(dataset, "random")
+        # Descriptor benchmarks only need serialized PEM samples.  Loading them
+        # directly keeps the classical-ML pipeline independent of optional
+        # PyTorch dataset wrappers in data.loader.
+        split_dir = Path("data/splits") / dataset / split_type
+        data = {name: _load_samples(split_dir, name)
+                for name in ("train", "val", "test")}
 
         train_samples = data['train']
         val_samples = data['val']
@@ -281,6 +269,9 @@ def run_single_model(
             'test_metrics': test_metrics,
             'best_params': best_params,
             'feature_importance_top30': feature_importance,
+            'runtime_seconds': time.perf_counter() - run_started,
+            'selection_metric': 'validation RMSE',
+            'n_optuna_trials': n_trials if hpo_used else 0,
         }
 
         with open(metrics_file, 'w') as f:
@@ -330,7 +321,8 @@ class BenchmarkRunner:
         self.config = config
         self.bench_cfg = config.get('benchmark', {})
         self.output_base = Path(config.get('output', {}).get(
-            'base_dir', 'results/benchmark'))
+            'base_dir',
+            'results/final_experiments/raw_runs/primary_ablation'))
 
     def run(self, models: Optional[List[str]] = None,
             splits: Optional[List[str]] = None,

@@ -1,0 +1,61 @@
+family,split,comparison,metric,test,p_value_unadjusted,p_value_holm,n_pairs,interpretation
+primary,random,Chemistry + Site + Context minus Chemistry,r2,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Chemistry + Site + Context minus Chemistry,rmse,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Chemistry + Site + Context minus Chemistry,mae,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Chemistry + Site + Context minus Chemistry,spearman,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Chemistry + Site minus Chemistry,r2,exact paired sign-flip permutation,0.1875,1.0,5,inconclusive
+primary,random,Chemistry + Site minus Chemistry,rmse,exact paired sign-flip permutation,0.1875,1.0,5,inconclusive
+primary,random,Chemistry + Site minus Chemistry,mae,exact paired sign-flip permutation,0.25,1.0,5,inconclusive
+primary,random,Chemistry + Site minus Chemistry,spearman,exact paired sign-flip permutation,0.125,1.0,5,inconclusive
+primary,random,Chemistry + Site + Context minus Chemistry + Site,r2,exact paired sign-flip permutation,0.125,1.0,5,inconclusive
+primary,random,Chemistry + Site + Context minus Chemistry + Site,rmse,exact paired sign-flip permutation,0.125,1.0,5,inconclusive
+primary,random,Chemistry + Site + Context minus Chemistry + Site,mae,exact paired sign-flip permutation,0.1875,1.0,5,inconclusive
+primary,random,Chemistry + Site + Context minus Chemistry + Site,spearman,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,random,Chemistry + Context minus Chemistry,r2,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,random,Chemistry + Context minus Chemistry,rmse,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,random,Chemistry + Context minus Chemistry,mae,exact paired sign-flip permutation,0.125,1.0,5,inconclusive
+primary,random,Chemistry + Context minus Chemistry,spearman,exact paired sign-flip permutation,0.4375,1.0,5,inconclusive
+primary,random,Site + Context minus Site,r2,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Site,rmse,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Site,mae,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Site,spearman,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Context,r2,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Context,rmse,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Context,mae,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,random,Site + Context minus Context,spearman,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus Chemistry,r2,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus Chemistry,rmse,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus Chemistry,mae,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus Chemistry,spearman,exact paired sign-flip permutation,0.25,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,r2,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,rmse,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,mae,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,spearman,exact paired sign-flip permutation,0.125,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site + Context minus Chemistry,r2,exact paired sign-flip permutation,0.6875,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site + Context minus Chemistry,rmse,exact paired sign-flip permutation,0.625,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site + Context minus Chemistry,mae,exact paired sign-flip permutation,0.1875,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site + Context minus Chemistry,spearman,exact paired sign-flip permutation,0.4375,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Context minus Chemistry,r2,exact paired sign-flip permutation,0.5625,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Context minus Chemistry,rmse,exact paired sign-flip permutation,0.625,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Context minus Chemistry,mae,exact paired sign-flip permutation,0.5,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Context minus Chemistry,spearman,exact paired sign-flip permutation,0.4375,1.0,5,inconclusive
+primary,sequence_cluster,Site + Context minus Site,r2,exact paired sign-flip permutation,0.25,1.0,5,inconclusive
+primary,sequence_cluster,Site + Context minus Site,rmse,exact paired sign-flip permutation,0.25,1.0,5,inconclusive
+primary,sequence_cluster,Site + Context minus Site,mae,exact paired sign-flip permutation,0.75,1.0,5,inconclusive
+primary,sequence_cluster,Site + Context minus Site,spearman,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Site + Context minus Context,r2,exact paired sign-flip permutation,0.75,1.0,5,inconclusive
+primary,sequence_cluster,Site + Context minus Context,rmse,exact paired sign-flip permutation,0.75,1.0,5,inconclusive
+primary,sequence_cluster,Site + Context minus Context,mae,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Site + Context minus Context,spearman,exact paired sign-flip permutation,0.0625,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus ECFP,r2,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus ECFP,rmse,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus ECFP,mae,exact paired sign-flip permutation,0.3125,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus ECFP,spearman,exact paired sign-flip permutation,0.1875,1.0,5,inconclusive
+primary,sequence_cluster,Chemistry + Site minus RDKit,r2,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus RDKit,rmse,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus RDKit,mae,exact paired sign-flip permutation,0.0625,1.0,5,supported directional difference
+primary,sequence_cluster,Chemistry + Site minus RDKit,spearman,exact paired sign-flip permutation,0.0625,1.0,5,inconclusive
+estimator,random_10_trial,Random Forest minus XGBoost for Chemistry + Site + Context,r2,exact paired sign-flip permutation,0.6875,1.0,5,inconclusive
+estimator,random_10_trial,Random Forest minus XGBoost for Chemistry + Site + Context,rmse,exact paired sign-flip permutation,0.6875,1.0,5,inconclusive
+estimator,random_10_trial,Random Forest minus XGBoost for Chemistry + Site + Context,mae,exact paired sign-flip permutation,0.5625,1.0,5,inconclusive
+estimator,random_10_trial,Random Forest minus XGBoost for Chemistry + Site + Context,spearman,exact paired sign-flip permutation,0.5,1.0,5,inconclusive

@@ -1,0 +1,25 @@
+model,performance_metric,diagnostic,cutoff_level_spearman,p_value_descriptive,n_cutoffs
+Chemistry,Spearman,median_max_tanimoto,0.7619047619047621,0.028004939153071794,8
+Chemistry,Spearman,test_n,0.6666666666666669,0.07098765432098751,8
+Chemistry,Spearman,unseen_test_edit_fraction,0.629940788348712,0.09413276656581646,8
+Chemistry,Spearman,unseen_test_monomer_fraction,0.4285714285714286,0.2894032248467901,8
+Chemistry + Site,Spearman,median_max_tanimoto,0.5714285714285715,0.1389599571607067,8
+Chemistry + Site,Spearman,test_n,-0.07142857142857144,0.8665262706759088,8
+Chemistry + Site,Spearman,unseen_test_edit_fraction,0.37796447300922725,0.355917683749582,8
+Chemistry + Site,Spearman,unseen_test_monomer_fraction,-0.2142857142857143,0.6103444156452669,8
+Chemistry + Site + Context,Spearman,median_max_tanimoto,0.8571428571428572,0.006530017254715292,8
+Chemistry + Site + Context,Spearman,test_n,0.28571428571428575,0.4927262450169573,8
+Chemistry + Site + Context,Spearman,unseen_test_edit_fraction,0.5039526306789697,0.2028844491499782,8
+Chemistry + Site + Context,Spearman,unseen_test_monomer_fraction,0.04761904761904763,0.9108491685195836,8
+ECFP,Spearman,median_max_tanimoto,0.6666666666666669,0.07098765432098751,8
+ECFP,Spearman,test_n,0.3333333333333334,0.4197530864197531,8
+ECFP,Spearman,unseen_test_edit_fraction,0.7559289460184545,0.030019745287544374,8
+ECFP,Spearman,unseen_test_monomer_fraction,0.2380952380952381,0.5701563208157683,8
+RDKit,Spearman,median_max_tanimoto,0.2380952380952381,0.5701563208157683,8
+RDKit,Spearman,test_n,0.2380952380952381,0.5701563208157683,8
+RDKit,Spearman,unseen_test_edit_fraction,0.7559289460184545,0.030019745287544374,8
+RDKit,Spearman,unseen_test_monomer_fraction,0.4285714285714286,0.2894032248467901,8
+Sequence,Spearman,median_max_tanimoto,0.8095238095238096,0.014902667686230067,8
+Sequence,Spearman,test_n,0.4523809523809524,0.260404767436885,8
+Sequence,Spearman,unseen_test_edit_fraction,0.5039526306789697,0.2028844491499782,8
+Sequence,Spearman,unseen_test_monomer_fraction,0.2142857142857143,0.6103444156452669,8

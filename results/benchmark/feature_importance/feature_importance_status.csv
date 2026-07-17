@@ -1,6 +1,0 @@
-model_id,method,status,error
-chem_A_xgb,SHAP TreeExplainer,completed,
-chem_site_AB_xgb,SHAP TreeExplainer,completed,
-full_ABC_xgb,SHAP TreeExplainer,completed,
-ecfp_xgb,SHAP TreeExplainer,completed,
-rdkit_full_xgb,SHAP TreeExplainer,completed,

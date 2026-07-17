@@ -463,4 +463,20 @@ class AnchorAwareDescriptorFeaturizer:
             'modification_rate',
         ])
 
-        return names
+        # Project the canonical A/B1/B2/B3/C name list using exactly the same
+        # slices as featurize_sample.  Returning all 73 names for an ablated
+        # matrix silently mislabels feature importances and SHAP values.
+        a, b1, b2, b3, c = names[:10], names[10:16], names[16:36], names[36:45], names[45:73]
+        mode_names = {
+            'full': a + b1 + b2 + b3 + c,
+            'chemistry_only': a,
+            'chemistry_position': a + b1,
+            'chemistry_residue': a + b2,
+            'chemistry_context': a + b3,
+            'chemistry_attachment': a + c,
+            'chemistry_anchors': a + b1 + b2 + b3,
+            'site_context_only': b1 + b2 + b3 + c,
+        }
+        if self.ablation_mode not in mode_names:
+            raise ValueError(f"Unknown ablation mode: {self.ablation_mode}")
+        return mode_names[self.ablation_mode]

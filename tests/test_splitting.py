@@ -201,7 +201,7 @@ def test_identify_derivative_groups():
         create_sample("TEST_003", "ACDEFG", 1.0, edits=[
             create_edit("TEST_003_edit_1", EditFamily.SIDECHAIN, "meth", [1], ["C"])
         ]),
-        create_sample("TEST_004", "KLMNOP", 1.0),  # Different sequence
+        create_sample("TEST_004", "KLMNPQ", 1.0),  # Different valid sequence
     ]
 
     groups = identify_derivative_groups(samples, max_edit_distance=1)
@@ -261,9 +261,10 @@ def test_scaffold_aware_splitter():
     samples = []
     for scaffold_id in range(30):  # 30 different scaffolds
         for variant in range(3):  # 3 variants per scaffold
-            seq = f"AC{chr(65 + scaffold_id % 26)}DEFG"
+            aa = "ACDEFGHIKLMNPQRSTVWY"
+            seq = f"AC{aa[scaffold_id % 20]}D{aa[(scaffold_id + 7) % 20]}FG"
             samples.append(
-                create_sample(f"TEST_{scaffold_id:03d}_{variant}", seq, 1.0)
+                create_sample(f"TESTSCAFFOLD_{scaffold_id * 3 + variant:04d}", seq, 1.0)
             )
 
     splitter = ScaffoldAwareSplitter(min_scaffolds=20, random_seed=42)
@@ -289,9 +290,10 @@ def test_scaffold_aware_splitter_insufficient_scaffolds():
     samples = []
     for scaffold_id in range(5):
         for variant in range(10):
-            seq = f"AC{chr(65 + scaffold_id)}DEFG"
+            aa = "ACDEFGHIKLMNPQRSTVWY"
+            seq = f"AC{aa[scaffold_id]}D{aa[scaffold_id + 5]}FG"
             samples.append(
-                create_sample(f"TEST_{scaffold_id:03d}_{variant}", seq, 1.0)
+                create_sample(f"TESTSMALL_{scaffold_id * 10 + variant:04d}", seq, 1.0)
             )
 
     splitter = ScaffoldAwareSplitter(min_scaffolds=20)
@@ -309,16 +311,17 @@ def test_sequence_cluster_splitter():
     for i in range(20):
         samples.append(create_sample(f"TEST_A_{i:03d}", "ACDEFG", 1.0))
 
-    # Cluster 2: Similar to "KLMNOP"
+    # Cluster 2: Similar to a distinct valid standard-AA sequence
     for i in range(20):
-        samples.append(create_sample(f"TEST_B_{i:03d}", "KLMNOP", 1.0))
+        samples.append(create_sample(f"TEST_B_{i:03d}", "KLMNPQ", 1.0))
 
     # More clusters...
     for cluster_id in range(18):  # 18 more clusters
-        seq = f"X{chr(65 + cluster_id % 26)}Y{chr(66 + cluster_id % 26)}ZW"
+        aa = "ACDEFGHIKLMNPQRSTVWY"
+        seq = f"{aa[cluster_id]}{aa[(cluster_id+3)%20]}Y{aa[(cluster_id+6)%20]}VW"
         for i in range(3):
             samples.append(
-                create_sample(f"TEST_C{cluster_id}_{i:03d}", seq, 1.0)
+                create_sample(f"TESTC_{cluster_id * 3 + i:04d}", seq, 1.0)
             )
 
     splitter = SequenceClusterSplitter(
@@ -419,7 +422,7 @@ def test_analyze_leakage():
         create_sample(f"TEST_{i:03d}", "ACDEFG", float(i + 50))
         for i in range(25)  # Same sequence
     ] + [
-        create_sample(f"TEST_{i:03d}", "KLMNOP", float(i + 75))
+        create_sample(f"TEST_{i:03d}", "KLMNPQ", float(i + 75))
         for i in range(25, 50)  # Different sequence
     ]
 
@@ -470,7 +473,8 @@ def test_full_pipeline_small_dataset():
 
     # Multiple scaffolds
     for scaffold_id in range(25):
-        seq = f"AC{chr(65 + scaffold_id % 26)}DEF"
+        aa = "ACDEFGHIKLMNPQRSTVWY"
+        seq = f"AC{aa[scaffold_id % 20]}DFF"
 
         # Multiple edits per scaffold
         for edit_var in range(4):
@@ -480,7 +484,7 @@ def test_full_pipeline_small_dataset():
             elif edit_var == 1:
                 # Sidechain
                 edits = [create_edit(
-                    f"S{scaffold_id}_E{edit_var}_edit_1",
+                    f"TESTS_{scaffold_id * 4 + edit_var:04d}_edit_1",
                     EditFamily.SIDECHAIN,
                     "meth",
                     [0],
@@ -489,7 +493,7 @@ def test_full_pipeline_small_dataset():
             elif edit_var == 2:
                 # Cyclization
                 edits = [create_edit(
-                    f"S{scaffold_id}_E{edit_var}_edit_1",
+                    f"TESTS_{scaffold_id * 4 + edit_var:04d}_edit_1",
                     EditFamily.CYCLIZATION,
                     "head_to_tail",
                     [0, 4],
@@ -499,14 +503,14 @@ def test_full_pipeline_small_dataset():
                 # Both
                 edits = [
                     create_edit(
-                        f"S{scaffold_id}_E{edit_var}_edit_1",
+                        f"TESTS_{scaffold_id * 4 + edit_var:04d}_edit_1",
                         EditFamily.SIDECHAIN,
                         "meth",
                         [0],
                         ["A"]
                     ),
                     create_edit(
-                        f"S{scaffold_id}_E{edit_var}_edit_2",
+                        f"TESTS_{scaffold_id * 4 + edit_var:04d}_edit_2",
                         EditFamily.CYCLIZATION,
                         "head_to_tail",
                         [0, 4],
@@ -515,7 +519,7 @@ def test_full_pipeline_small_dataset():
                 ]
 
             samples.append(create_sample(
-                f"TEST_S{scaffold_id}_E{edit_var}",
+                f"TESTS_{scaffold_id * 4 + edit_var:04d}",
                 seq,
                 float(scaffold_id * 10 + edit_var),
                 edits=edits

@@ -1,0 +1,2 @@
+comparison,mean_difference,ci95_low,ci95_high,proportion_improved,proportion_tied,proportion_worsened,exact_sign_test_p,n_families_total,n_families_valid,bootstrap_replicates,interval
+Chemistry + Site minus Chemistry,-0.017023073537722044,-0.043238758294253506,0.008661202802944168,0.3958333333333333,0.0,0.6041666666666666,0.19341265286193737,49,48,5000,percentile

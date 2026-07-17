@@ -1,0 +1,101 @@
+feature_system,descriptor_name,dimension,input_object,calculation_level,aggregation,edit_type_indicators,missing_value_handling,feature_scaling,constant_feature_removal,exact_overlap_after_prefix_removal
+Group A,mol_weight,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,logp,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,tpsa,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_h_acceptors,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_h_donors,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_rotatable_bonds,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_aromatic_rings,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_aliphatic_rings,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_edits,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,True,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,num_edit_families,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,True,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_count_total,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_count_unique,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_density,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_pos_mean,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_pos_std,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_pos_range,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_A,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_C,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_D,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_E,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_F,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_G,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_H,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_I,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_K,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_L,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_M,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_N,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_P,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_Q,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_R,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_S,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_T,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_V,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_W,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_res_Y,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_hydrophobic_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_charged_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_polar_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_aromatic_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_small_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_proline_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_terminal_frac,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_n_terminal_count,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_c_terminal_count,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_n_terminal,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_c_terminal,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_sidechain,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_backbone,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_cyclization,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_substitution,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_family_other,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_type_count_unique,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_type_entropy,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,attachment_type_count_unique,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,has_cyclization,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,has_backbone_mod,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_n_methylation,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_d_amino_acid,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_non_standard_aa,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_head_to_tail_cyclization,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_sidechain_cyclization,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_disulfide,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_acetylation,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_amidation,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_phosphorylation,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_other_types,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,anchor_pair_count,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,cyclization_ring_size,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,edit_anchor_overlap,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,sequence_length,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,sequence_cyclic,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+Group A,modification_rate,73,full peptide SMILES plus parsed edit records,full-molecule plus edit-count,none,False,non-finite to zero in benchmark,none for XGBoost,none,False
+RDKit,rdkit_Chi0,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_Chi1,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA1,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA10,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA11,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA2,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA3,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA4,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA5,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA6,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA7,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA8,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_EState_VSA9,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_HeavyAtomCount,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_NumRadicalElectrons,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_NumValenceElectrons,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState1,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState10,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState2,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState3,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState4,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState5,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState6,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState7,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState8,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_VSA_EState9,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False
+RDKit,rdkit_setupAUTOCorrDescriptors,27,full peptide SMILES,full-molecule,none,False,training-median descriptor imputation,none for XGBoost,none,False

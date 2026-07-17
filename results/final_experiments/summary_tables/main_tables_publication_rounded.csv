@@ -1,0 +1,197 @@
+split,feature_set_id,feature_set,metric,mean,sample_sd,ci95_low,ci95_high,n_completed_seeds,protocol,estimator
+random,A,Chemistry,r2,0.425,0.01,0.413,0.437,5,50-trial primary XGBoost,
+random,A,Chemistry,rmse,0.866,0.007,0.857,0.875,5,50-trial primary XGBoost,
+random,A,Chemistry,mae,0.528,0.005,0.522,0.535,5,50-trial primary XGBoost,
+random,A,Chemistry,spearman,0.714,0.007,0.705,0.724,5,50-trial primary XGBoost,
+random,A+B,Chemistry + Site,r2,0.446,0.021,0.42,0.472,5,50-trial primary XGBoost,
+random,A+B,Chemistry + Site,rmse,0.85,0.016,0.83,0.87,5,50-trial primary XGBoost,
+random,A+B,Chemistry + Site,mae,0.516,0.013,0.5,0.532,5,50-trial primary XGBoost,
+random,A+B,Chemistry + Site,spearman,0.732,0.011,0.719,0.746,5,50-trial primary XGBoost,
+random,A+B+C,Chemistry + Site + Context,r2,0.467,0.006,0.46,0.474,5,50-trial primary XGBoost,
+random,A+B+C,Chemistry + Site + Context,rmse,0.834,0.004,0.829,0.84,5,50-trial primary XGBoost,
+random,A+B+C,Chemistry + Site + Context,mae,0.502,0.004,0.497,0.507,5,50-trial primary XGBoost,
+random,A+B+C,Chemistry + Site + Context,spearman,0.74,0.006,0.732,0.747,5,50-trial primary XGBoost,
+random,A+C,Chemistry + Context,r2,0.414,0.022,0.387,0.442,5,50-trial primary XGBoost,
+random,A+C,Chemistry + Context,rmse,0.874,0.016,0.854,0.895,5,50-trial primary XGBoost,
+random,A+C,Chemistry + Context,mae,0.521,0.006,0.514,0.529,5,50-trial primary XGBoost,
+random,A+C,Chemistry + Context,spearman,0.712,0.008,0.702,0.721,5,50-trial primary XGBoost,
+random,B,Site,r2,0.292,0.036,0.247,0.337,5,50-trial primary XGBoost,
+random,B,Site,rmse,0.961,0.025,0.93,0.991,5,50-trial primary XGBoost,
+random,B,Site,mae,0.626,0.019,0.602,0.649,5,50-trial primary XGBoost,
+random,B,Site,spearman,0.603,0.013,0.587,0.62,5,50-trial primary XGBoost,
+random,B+C,Site + Context,r2,0.379,0.02,0.354,0.404,5,50-trial primary XGBoost,
+random,B+C,Site + Context,rmse,0.9,0.015,0.882,0.918,5,50-trial primary XGBoost,
+random,B+C,Site + Context,mae,0.571,0.01,0.558,0.583,5,50-trial primary XGBoost,
+random,B+C,Site + Context,spearman,0.676,0.007,0.668,0.684,5,50-trial primary XGBoost,
+random,C,Context,r2,0.27,0.011,0.256,0.283,5,50-trial primary XGBoost,
+random,C,Context,rmse,0.976,0.007,0.967,0.985,5,50-trial primary XGBoost,
+random,C,Context,mae,0.628,0.005,0.622,0.634,5,50-trial primary XGBoost,
+random,C,Context,spearman,0.564,0.005,0.557,0.57,5,50-trial primary XGBoost,
+sequence_cluster,A,Chemistry,r2,0.243,0.011,0.23,0.257,5,50-trial primary XGBoost,
+sequence_cluster,A,Chemistry,rmse,0.936,0.007,0.928,0.944,5,50-trial primary XGBoost,
+sequence_cluster,A,Chemistry,mae,0.605,0.025,0.574,0.636,5,50-trial primary XGBoost,
+sequence_cluster,A,Chemistry,spearman,0.586,0.006,0.578,0.594,5,50-trial primary XGBoost,
+sequence_cluster,A+B,Chemistry + Site,r2,0.273,0.018,0.25,0.295,5,50-trial primary XGBoost,
+sequence_cluster,A+B,Chemistry + Site,rmse,0.918,0.012,0.903,0.932,5,50-trial primary XGBoost,
+sequence_cluster,A+B,Chemistry + Site,mae,0.579,0.024,0.55,0.609,5,50-trial primary XGBoost,
+sequence_cluster,A+B,Chemistry + Site,spearman,0.602,0.016,0.582,0.623,5,50-trial primary XGBoost,
+sequence_cluster,A+B+C,Chemistry + Site + Context,r2,0.251,0.043,0.198,0.304,5,50-trial primary XGBoost,
+sequence_cluster,A+B+C,Chemistry + Site + Context,rmse,0.931,0.026,0.898,0.964,5,50-trial primary XGBoost,
+sequence_cluster,A+B+C,Chemistry + Site + Context,mae,0.59,0.021,0.564,0.616,5,50-trial primary XGBoost,
+sequence_cluster,A+B+C,Chemistry + Site + Context,spearman,0.57,0.035,0.527,0.614,5,50-trial primary XGBoost,
+sequence_cluster,A+C,Chemistry + Context,r2,0.219,0.067,0.136,0.302,5,50-trial primary XGBoost,
+sequence_cluster,A+C,Chemistry + Context,rmse,0.95,0.04,0.9,1.0,5,50-trial primary XGBoost,
+sequence_cluster,A+C,Chemistry + Context,mae,0.597,0.011,0.583,0.611,5,50-trial primary XGBoost,
+sequence_cluster,A+C,Chemistry + Context,spearman,0.555,0.058,0.483,0.626,5,50-trial primary XGBoost,
+sequence_cluster,B,Site,r2,0.143,0.01,0.131,0.155,5,50-trial primary XGBoost,
+sequence_cluster,B,Site,rmse,0.996,0.006,0.989,1.004,5,50-trial primary XGBoost,
+sequence_cluster,B,Site,mae,0.694,0.004,0.689,0.699,5,50-trial primary XGBoost,
+sequence_cluster,B,Site,spearman,0.437,0.024,0.407,0.466,5,50-trial primary XGBoost,
+sequence_cluster,B+C,Site + Context,r2,0.103,0.052,0.039,0.168,5,50-trial primary XGBoost,
+sequence_cluster,B+C,Site + Context,rmse,1.019,0.029,0.983,1.055,5,50-trial primary XGBoost,
+sequence_cluster,B+C,Site + Context,mae,0.699,0.02,0.674,0.724,5,50-trial primary XGBoost,
+sequence_cluster,B+C,Site + Context,spearman,0.483,0.013,0.468,0.499,5,50-trial primary XGBoost,
+sequence_cluster,C,Context,r2,0.086,0.027,0.052,0.119,5,50-trial primary XGBoost,
+sequence_cluster,C,Context,rmse,1.029,0.015,1.011,1.048,5,50-trial primary XGBoost,
+sequence_cluster,C,Context,mae,0.736,0.02,0.712,0.761,5,50-trial primary XGBoost,
+sequence_cluster,C,Context,spearman,0.457,0.013,0.441,0.474,5,50-trial primary XGBoost,
+,A,Chemistry,r2,0.107,0.0,0.107,0.108,5,10-trial estimator matrix,ElasticNet
+,A,Chemistry,rmse,1.079,0.0,1.079,1.079,5,10-trial estimator matrix,ElasticNet
+,A,Chemistry,mae,0.698,0.0,0.698,0.698,5,10-trial estimator matrix,ElasticNet
+,A,Chemistry,spearman,0.474,0.001,0.473,0.474,5,10-trial estimator matrix,ElasticNet
+,A+B,Chemistry + Site,r2,0.17,0.002,0.168,0.172,5,10-trial estimator matrix,ElasticNet
+,A+B,Chemistry + Site,rmse,1.041,0.001,1.039,1.042,5,10-trial estimator matrix,ElasticNet
+,A+B,Chemistry + Site,mae,0.675,0.0,0.674,0.675,5,10-trial estimator matrix,ElasticNet
+,A+B,Chemistry + Site,spearman,0.513,0.0,0.513,0.514,5,10-trial estimator matrix,ElasticNet
+,A+B+C,Chemistry + Site + Context,r2,0.179,0.001,0.178,0.179,5,10-trial estimator matrix,ElasticNet
+,A+B+C,Chemistry + Site + Context,rmse,1.035,0.0,1.035,1.036,5,10-trial estimator matrix,ElasticNet
+,A+B+C,Chemistry + Site + Context,mae,0.668,0.0,0.668,0.668,5,10-trial estimator matrix,ElasticNet
+,A+B+C,Chemistry + Site + Context,spearman,0.547,0.0,0.546,0.547,5,10-trial estimator matrix,ElasticNet
+,A+C,Chemistry + Context,r2,0.18,0.002,0.178,0.182,5,10-trial estimator matrix,ElasticNet
+,A+C,Chemistry + Context,rmse,1.034,0.001,1.033,1.036,5,10-trial estimator matrix,ElasticNet
+,A+C,Chemistry + Context,mae,0.669,0.0,0.669,0.67,5,10-trial estimator matrix,ElasticNet
+,A+C,Chemistry + Context,spearman,0.543,0.0,0.543,0.543,5,10-trial estimator matrix,ElasticNet
+,B,Site,r2,0.144,0.004,0.139,0.148,5,10-trial estimator matrix,ElasticNet
+,B,Site,rmse,1.057,0.002,1.054,1.06,5,10-trial estimator matrix,ElasticNet
+,B,Site,mae,0.702,0.002,0.699,0.704,5,10-trial estimator matrix,ElasticNet
+,B,Site,spearman,0.419,0.006,0.411,0.427,5,10-trial estimator matrix,ElasticNet
+,B+C,Site + Context,r2,0.179,0.001,0.178,0.18,5,10-trial estimator matrix,ElasticNet
+,B+C,Site + Context,rmse,1.035,0.0,1.035,1.036,5,10-trial estimator matrix,ElasticNet
+,B+C,Site + Context,mae,0.679,0.0,0.679,0.68,5,10-trial estimator matrix,ElasticNet
+,B+C,Site + Context,spearman,0.513,0.002,0.511,0.516,5,10-trial estimator matrix,ElasticNet
+,C,Context,r2,0.144,0.0,0.144,0.144,5,10-trial estimator matrix,ElasticNet
+,C,Context,rmse,1.057,0.0,1.057,1.057,5,10-trial estimator matrix,ElasticNet
+,C,Context,mae,0.702,0.0,0.702,0.702,5,10-trial estimator matrix,ElasticNet
+,C,Context,spearman,0.452,0.0,0.452,0.452,5,10-trial estimator matrix,ElasticNet
+,A,Chemistry,r2,0.369,0.014,0.352,0.387,5,10-trial estimator matrix,RBF-SVR
+,A,Chemistry,rmse,0.907,0.01,0.895,0.92,5,10-trial estimator matrix,RBF-SVR
+,A,Chemistry,mae,0.502,0.004,0.497,0.507,5,10-trial estimator matrix,RBF-SVR
+,A,Chemistry,spearman,0.727,0.003,0.722,0.731,5,10-trial estimator matrix,RBF-SVR
+,A+B,Chemistry + Site,r2,0.416,0.029,0.38,0.452,5,10-trial estimator matrix,RBF-SVR
+,A+B,Chemistry + Site,rmse,0.873,0.021,0.846,0.9,5,10-trial estimator matrix,RBF-SVR
+,A+B,Chemistry + Site,mae,0.471,0.013,0.455,0.487,5,10-trial estimator matrix,RBF-SVR
+,A+B,Chemistry + Site,spearman,0.77,0.009,0.759,0.782,5,10-trial estimator matrix,RBF-SVR
+,A+B+C,Chemistry + Site + Context,r2,0.386,0.031,0.348,0.425,5,10-trial estimator matrix,RBF-SVR
+,A+B+C,Chemistry + Site + Context,rmse,0.895,0.023,0.867,0.923,5,10-trial estimator matrix,RBF-SVR
+,A+B+C,Chemistry + Site + Context,mae,0.499,0.016,0.479,0.518,5,10-trial estimator matrix,RBF-SVR
+,A+B+C,Chemistry + Site + Context,spearman,0.742,0.016,0.721,0.762,5,10-trial estimator matrix,RBF-SVR
+,A+C,Chemistry + Context,r2,0.374,0.021,0.349,0.4,5,10-trial estimator matrix,RBF-SVR
+,A+C,Chemistry + Context,rmse,0.904,0.015,0.885,0.922,5,10-trial estimator matrix,RBF-SVR
+,A+C,Chemistry + Context,mae,0.494,0.012,0.48,0.509,5,10-trial estimator matrix,RBF-SVR
+,A+C,Chemistry + Context,spearman,0.733,0.01,0.72,0.746,5,10-trial estimator matrix,RBF-SVR
+,B,Site,r2,0.27,0.028,0.235,0.304,5,10-trial estimator matrix,RBF-SVR
+,B,Site,rmse,0.976,0.019,0.953,0.999,5,10-trial estimator matrix,RBF-SVR
+,B,Site,mae,0.59,0.012,0.576,0.604,5,10-trial estimator matrix,RBF-SVR
+,B,Site,spearman,0.63,0.024,0.6,0.66,5,10-trial estimator matrix,RBF-SVR
+,B+C,Site + Context,r2,0.336,0.028,0.302,0.37,5,10-trial estimator matrix,RBF-SVR
+,B+C,Site + Context,rmse,0.931,0.019,0.907,0.954,5,10-trial estimator matrix,RBF-SVR
+,B+C,Site + Context,mae,0.539,0.01,0.527,0.551,5,10-trial estimator matrix,RBF-SVR
+,B+C,Site + Context,spearman,0.696,0.008,0.686,0.707,5,10-trial estimator matrix,RBF-SVR
+,C,Context,r2,0.175,0.023,0.147,0.204,5,10-trial estimator matrix,RBF-SVR
+,C,Context,rmse,1.038,0.015,1.019,1.056,5,10-trial estimator matrix,RBF-SVR
+,C,Context,mae,0.615,0.004,0.61,0.62,5,10-trial estimator matrix,RBF-SVR
+,C,Context,spearman,0.552,0.007,0.543,0.561,5,10-trial estimator matrix,RBF-SVR
+,A,Chemistry,r2,0.409,0.01,0.396,0.422,5,10-trial estimator matrix,Random Forest
+,A,Chemistry,rmse,0.878,0.008,0.869,0.888,5,10-trial estimator matrix,Random Forest
+,A,Chemistry,mae,0.534,0.006,0.526,0.541,5,10-trial estimator matrix,Random Forest
+,A,Chemistry,spearman,0.704,0.006,0.696,0.712,5,10-trial estimator matrix,Random Forest
+,A+B,Chemistry + Site,r2,0.443,0.005,0.436,0.449,5,10-trial estimator matrix,Random Forest
+,A+B,Chemistry + Site,rmse,0.853,0.004,0.848,0.858,5,10-trial estimator matrix,Random Forest
+,A+B,Chemistry + Site,mae,0.513,0.002,0.51,0.516,5,10-trial estimator matrix,Random Forest
+,A+B,Chemistry + Site,spearman,0.73,0.004,0.725,0.735,5,10-trial estimator matrix,Random Forest
+,A+B+C,Chemistry + Site + Context,r2,0.462,0.005,0.456,0.469,5,10-trial estimator matrix,Random Forest
+,A+B+C,Chemistry + Site + Context,rmse,0.838,0.004,0.833,0.843,5,10-trial estimator matrix,Random Forest
+,A+B+C,Chemistry + Site + Context,mae,0.505,0.002,0.503,0.508,5,10-trial estimator matrix,Random Forest
+,A+B+C,Chemistry + Site + Context,spearman,0.741,0.004,0.736,0.745,5,10-trial estimator matrix,Random Forest
+,A+C,Chemistry + Context,r2,0.41,0.006,0.402,0.418,5,10-trial estimator matrix,Random Forest
+,A+C,Chemistry + Context,rmse,0.877,0.005,0.872,0.883,5,10-trial estimator matrix,Random Forest
+,A+C,Chemistry + Context,mae,0.526,0.003,0.523,0.529,5,10-trial estimator matrix,Random Forest
+,A+C,Chemistry + Context,spearman,0.707,0.003,0.704,0.711,5,10-trial estimator matrix,Random Forest
+,B,Site,r2,0.324,0.003,0.32,0.327,5,10-trial estimator matrix,Random Forest
+,B,Site,rmse,0.94,0.002,0.937,0.942,5,10-trial estimator matrix,Random Forest
+,B,Site,mae,0.606,0.002,0.604,0.608,5,10-trial estimator matrix,Random Forest
+,B,Site,spearman,0.614,0.001,0.613,0.616,5,10-trial estimator matrix,Random Forest
+,B+C,Site + Context,r2,0.398,0.006,0.39,0.406,5,10-trial estimator matrix,Random Forest
+,B+C,Site + Context,rmse,0.886,0.005,0.881,0.892,5,10-trial estimator matrix,Random Forest
+,B+C,Site + Context,mae,0.564,0.003,0.561,0.568,5,10-trial estimator matrix,Random Forest
+,B+C,Site + Context,spearman,0.684,0.004,0.68,0.689,5,10-trial estimator matrix,Random Forest
+,C,Context,r2,0.266,0.011,0.253,0.279,5,10-trial estimator matrix,Random Forest
+,C,Context,rmse,0.979,0.007,0.97,0.987,5,10-trial estimator matrix,Random Forest
+,C,Context,mae,0.63,0.004,0.625,0.635,5,10-trial estimator matrix,Random Forest
+,C,Context,spearman,0.552,0.003,0.548,0.556,5,10-trial estimator matrix,Random Forest
+,A,Chemistry,r2,0.107,0.0,0.107,0.107,5,10-trial estimator matrix,Ridge
+,A,Chemistry,rmse,1.079,0.0,1.079,1.079,5,10-trial estimator matrix,Ridge
+,A,Chemistry,mae,0.698,0.0,0.698,0.698,5,10-trial estimator matrix,Ridge
+,A,Chemistry,spearman,0.474,0.0,0.474,0.474,5,10-trial estimator matrix,Ridge
+,A+B,Chemistry + Site,r2,0.172,0.003,0.169,0.175,5,10-trial estimator matrix,Ridge
+,A+B,Chemistry + Site,rmse,1.04,0.002,1.038,1.042,5,10-trial estimator matrix,Ridge
+,A+B,Chemistry + Site,mae,0.675,0.0,0.674,0.675,5,10-trial estimator matrix,Ridge
+,A+B,Chemistry + Site,spearman,0.513,0.0,0.513,0.514,5,10-trial estimator matrix,Ridge
+,A+B+C,Chemistry + Site + Context,r2,0.177,0.0,0.177,0.178,5,10-trial estimator matrix,Ridge
+,A+B+C,Chemistry + Site + Context,rmse,1.036,0.0,1.036,1.037,5,10-trial estimator matrix,Ridge
+,A+B+C,Chemistry + Site + Context,mae,0.668,0.0,0.668,0.668,5,10-trial estimator matrix,Ridge
+,A+B+C,Chemistry + Site + Context,spearman,0.546,0.0,0.546,0.546,5,10-trial estimator matrix,Ridge
+,A+C,Chemistry + Context,r2,0.182,0.0,0.181,0.182,5,10-trial estimator matrix,Ridge
+,A+C,Chemistry + Context,rmse,1.033,0.0,1.033,1.034,5,10-trial estimator matrix,Ridge
+,A+C,Chemistry + Context,mae,0.669,0.0,0.669,0.669,5,10-trial estimator matrix,Ridge
+,A+C,Chemistry + Context,spearman,0.542,0.0,0.542,0.542,5,10-trial estimator matrix,Ridge
+,B,Site,r2,0.144,0.002,0.141,0.146,5,10-trial estimator matrix,Ridge
+,B,Site,rmse,1.057,0.001,1.056,1.059,5,10-trial estimator matrix,Ridge
+,B,Site,mae,0.701,0.0,0.701,0.702,5,10-trial estimator matrix,Ridge
+,B,Site,spearman,0.423,0.001,0.422,0.424,5,10-trial estimator matrix,Ridge
+,B+C,Site + Context,r2,0.18,0.0,0.18,0.18,5,10-trial estimator matrix,Ridge
+,B+C,Site + Context,rmse,1.035,0.0,1.035,1.035,5,10-trial estimator matrix,Ridge
+,B+C,Site + Context,mae,0.679,0.0,0.679,0.679,5,10-trial estimator matrix,Ridge
+,B+C,Site + Context,spearman,0.515,0.0,0.515,0.515,5,10-trial estimator matrix,Ridge
+,C,Context,r2,0.144,0.0,0.144,0.144,5,10-trial estimator matrix,Ridge
+,C,Context,rmse,1.057,0.0,1.057,1.057,5,10-trial estimator matrix,Ridge
+,C,Context,mae,0.702,0.0,0.702,0.702,5,10-trial estimator matrix,Ridge
+,C,Context,spearman,0.452,0.0,0.452,0.452,5,10-trial estimator matrix,Ridge
+,A,Chemistry,r2,0.429,0.003,0.425,0.433,5,10-trial estimator matrix,XGBoost
+,A,Chemistry,rmse,0.863,0.003,0.86,0.866,5,10-trial estimator matrix,XGBoost
+,A,Chemistry,mae,0.525,0.001,0.523,0.526,5,10-trial estimator matrix,XGBoost
+,A,Chemistry,spearman,0.718,0.002,0.716,0.72,5,10-trial estimator matrix,XGBoost
+,A+B,Chemistry + Site,r2,0.456,0.012,0.44,0.471,5,10-trial estimator matrix,XGBoost
+,A+B,Chemistry + Site,rmse,0.843,0.01,0.831,0.855,5,10-trial estimator matrix,XGBoost
+,A+B,Chemistry + Site,mae,0.512,0.01,0.499,0.525,5,10-trial estimator matrix,XGBoost
+,A+B,Chemistry + Site,spearman,0.735,0.01,0.723,0.747,5,10-trial estimator matrix,XGBoost
+,A+B+C,Chemistry + Site + Context,r2,0.461,0.01,0.448,0.473,5,10-trial estimator matrix,XGBoost
+,A+B+C,Chemistry + Site + Context,rmse,0.839,0.008,0.829,0.849,5,10-trial estimator matrix,XGBoost
+,A+B+C,Chemistry + Site + Context,mae,0.509,0.01,0.496,0.522,5,10-trial estimator matrix,XGBoost
+,A+B+C,Chemistry + Site + Context,spearman,0.734,0.012,0.719,0.749,5,10-trial estimator matrix,XGBoost
+,A+C,Chemistry + Context,r2,0.429,0.003,0.425,0.433,5,10-trial estimator matrix,XGBoost
+,A+C,Chemistry + Context,rmse,0.863,0.003,0.86,0.867,5,10-trial estimator matrix,XGBoost
+,A+C,Chemistry + Context,mae,0.518,0.004,0.513,0.522,5,10-trial estimator matrix,XGBoost
+,A+C,Chemistry + Context,spearman,0.716,0.003,0.712,0.72,5,10-trial estimator matrix,XGBoost
+,B,Site,r2,0.321,0.012,0.307,0.336,5,10-trial estimator matrix,XGBoost
+,B,Site,rmse,0.941,0.008,0.931,0.951,5,10-trial estimator matrix,XGBoost
+,B,Site,mae,0.61,0.007,0.602,0.619,5,10-trial estimator matrix,XGBoost
+,B,Site,spearman,0.611,0.01,0.598,0.623,5,10-trial estimator matrix,XGBoost
+,B+C,Site + Context,r2,0.386,0.008,0.376,0.397,5,10-trial estimator matrix,XGBoost
+,B+C,Site + Context,rmse,0.895,0.006,0.887,0.903,5,10-trial estimator matrix,XGBoost
+,B+C,Site + Context,mae,0.566,0.005,0.559,0.573,5,10-trial estimator matrix,XGBoost
+,B+C,Site + Context,spearman,0.678,0.007,0.669,0.686,5,10-trial estimator matrix,XGBoost
+,C,Context,r2,0.275,0.004,0.27,0.28,5,10-trial estimator matrix,XGBoost
+,C,Context,rmse,0.972,0.003,0.969,0.976,5,10-trial estimator matrix,XGBoost
+,C,Context,mae,0.625,0.002,0.622,0.627,5,10-trial estimator matrix,XGBoost
+,C,Context,spearman,0.568,0.002,0.565,0.571,5,10-trial estimator matrix,XGBoost

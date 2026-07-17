@@ -1,7 +1,7 @@
 """
 CASPer Benchmark Framework — Core Package.
 
-Unified benchmark pipeline for fair comparison of all manuscript models:
+Unified benchmark pipeline for fair comparison of all project models:
 internal baselines, primary paper models, ablation controls, and generic chemistry benchmarks.
 
 All models use identical data splits, metrics, and Optuna HPO.

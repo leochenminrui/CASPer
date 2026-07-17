@@ -1,0 +1,30 @@
+{
+  "git_commit": "c6d41c7670969e04522ce592ae42b2866a3822e8",
+  "timestamp_utc": "2026-07-17T12:48:26.131916+00:00",
+  "python": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "os": "Linux-6.8.0-124-generic-x86_64-with-glibc2.35",
+  "cpu": "x86_64",
+  "gpu": "none detected / CPU execution",
+  "dataset_checksum": "663c06cc870c65b3f88c27212e9736758c015cbecdaa21cb67ffb78f11d72355",
+  "split_checksums": {
+    "data/splits/CycPeptMPDB_PAMPA/random/test.jsonl": "9b6718b3209659e4b95bc767e36a27def09b8d8ad66b806186a4c8a81b917f55",
+    "data/splits/CycPeptMPDB_PAMPA/random/train.jsonl": "c71e110a2c2f79df40dd6b15def6ce337b50ab2fac2d09020de83829eaef24cc",
+    "data/splits/CycPeptMPDB_PAMPA/random/val.jsonl": "cb07e48b09216a98e501f8a0d833e8f681d29f0d44e7cb175c1d13f986a98375",
+    "data/splits/CycPeptMPDB_PAMPA/sequence_cluster/test.jsonl": "ee55ae9d8c82030cf9e5a6248759f6b2492870b6ea9c598ce690b9834caaf98a",
+    "data/splits/CycPeptMPDB_PAMPA/sequence_cluster/train.jsonl": "80f518c0289af6cfb684a4654fc999a11e59e7c462531ef2f5dd41b1321841c1",
+    "data/splits/CycPeptMPDB_PAMPA/sequence_cluster/val.jsonl": "69f225f44b19d0c2f91a3d024d40c009a9da74f589e0fc56f2df1d076756c625"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "primary_optuna_trials": 50,
+  "estimator_matrix_optuna_trials": 10,
+  "optuna_and_estimator_config": "configs/benchmark/benchmark_full.yaml",
+  "config_snapshot": "# Full Benchmark Configuration\n# Complete benchmark: 50 Optuna trials, 5 seeds, both random + cluster splits\n# Use this for project-quality results\n\nbenchmark:\n  name: \"CASPer Benchmark \u2014 Full\"\n  version: \"1.0.0\"\n  description: \"Full reproducible project benchmark\"\n\n  splits:\n    - random\n    - sequence_cluster\n\n  seeds: [0, 1, 2, 3, 4]\n  n_trials: 50\n\n  models:\n    include:\n      # Internal baselines\n      - seq_aa_xgb\n      - position_only_xgb\n      # Primary project models\n      - chem_A_xgb\n      - chem_site_AB_xgb\n      - full_ABC_xgb\n      # Ablation/control models\n      - site_B_xgb\n      - context_C_xgb\n      - site_context_BC_xgb\n      - chem_context_AC_xgb\n      - chem_B1_xgb\n      - chem_B2_xgb\n      - chem_B3_xgb\n      # Generic benchmarks\n      - ecfp_xgb\n      - rdkit_full_xgb\n      - ecfp_rf\n    exclude: []\n\noptuna:\n  pruner: \"median\"\n  n_startup_trials: 5\n  n_warmup_steps: 0\n  seed: 42\n\nxgboost:\n  search_space:\n    n_estimators: [200, 2000]\n    max_depth: [2, 10]\n    learning_rate: [0.005, 0.2]\n    subsample: [0.5, 1.0]\n    colsample_bytree: [0.5, 1.0]\n    min_child_weight: [1, 20]\n    reg_alpha: [1e-8, 10.0]\n    reg_lambda: [1e-8, 100.0]\n    gamma: [0.0, 10.0]\n  fixed_params:\n    tree_method: \"hist\"\n    early_stopping_rounds: 50\n    verbosity: 0\n    n_jobs: -1\n\nrandom_forest:\n  search_space:\n    n_estimators: [100, 1000]\n    max_depth: [5, 30]\n    min_samples_split: [2, 20]\n    min_samples_leaf: [1, 10]\n    max_features: [\"sqrt\", \"log2\", null]\n  fixed_params:\n    n_jobs: -1\n\noutput:\n  base_dir: \"results/final_experiments/raw_runs/primary_ablation\"\n  save_predictions: true\n  save_models: false\n  save_optuna_db: true\n",
+  "dependency_change": "biopython==1.87 added to runtime environment for existing split tests; requirements.txt unchanged",
+  "output_root": "results/final_experiments"
+}

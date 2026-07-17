@@ -1,0 +1,11 @@
+{
+  "n_estimators": 1507,
+  "max_depth": 4,
+  "learning_rate": 0.053250242594856875,
+  "subsample": 0.5864582466083966,
+  "colsample_bytree": 0.7968550751329968,
+  "min_child_weight": 5,
+  "reg_alpha": 0.05270409391388429,
+  "reg_lambda": 1.016451470328937e-08,
+  "gamma": 0.40502269898698645
+}
