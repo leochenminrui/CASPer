@@ -1,7 +1,5 @@
 # Final experimental report
 
-**COMPLETE**
-
 Experimental analyses are complete; manuscript production is blocked only by absent source files.
 
 ## Key paired R² effects
