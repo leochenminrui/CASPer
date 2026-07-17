@@ -1,7 +1,7 @@
 {
   "status": "EXPERIMENTS_COMPLETE_SUBMISSION_BLOCKED",
-  "timestamp_utc": "2026-07-17T13:34:15.317206+00:00",
-  "code_commit": "a3381786bc1a58698db267c5329e7981683ae821",
+  "timestamp_utc": "2026-07-17T13:57:30.014312+00:00",
+  "code_commit": "5c4a3803df325dd78461399295270332ccf7dbde",
   "python": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
   "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.35",
   "dataset_checksum": "663c06cc870c65b3f88c27212e9736758c015cbecdaa21cb67ffb78f11d72355",
@@ -22,9 +22,9 @@
     "tests": "28 passed, 0 failed"
   },
   "artifact_checksums": {
-    "results/minor_revision_experiments/primary_ablation/seed_level_results.csv": "6f1d0d4b5faeff9c778a5992c66d4512a278327903066c500e364b5363a3773e",
+    "results/minor_revision_experiments/primary_ablation/seed_level_results.csv": "8e1a5a47c5126ce1d80a23582c273917f7ca9d99c0150d9425c1b9be6099b733",
     "results/minor_revision_experiments/primary_ablation/summary_with_ci.csv": "681fe6b22920fdc0bde8e8777880829d995a6449ec54b2cded6625f65821971d",
-    "results/minor_revision_experiments/estimator_matrix/seed_level_results.csv": "abe0b54a0ae7e10064a363765c3ebf586138e2f76b865bfc48bb2de3ee7c7b44",
+    "results/minor_revision_experiments/estimator_matrix/seed_level_results.csv": "19ddac78856865aa5a5e28dfa271643c0f36d396f3972b6c319aac768b646d1a",
     "results/minor_revision_experiments/paired_statistics/paired_differences.csv": "cc3f12eb806c450f638874ed9c860db390e9e23bf4ca051f580a917ca77acbd5",
     "results/minor_revision_experiments/paired_statistics/grouped_bootstrap_metrics.csv": "1d6ebed4af0f4cceb34d37b7d4791840bf14427b5c3e42b7ff6fcf2be5021bd1",
     "results/minor_revision_experiments/paired_statistics/bootstrap_differences.csv": "143ec80422359d3275864e05c00f587f3893af65a177d767aebca0f489e76138",
