@@ -34,7 +34,7 @@ from benchmark.featurizers import FEATURIZER_REGISTRY
 
 SEEDS = [0, 1, 2, 3, 4]  # same as main benchmark
 N_TRIALS = 10             # same HPO budget for every estimator
-OUTPUT_DIR = PROJECT_ROOT / 'results/benchmark/estimator_comparison'
+OUTPUT_DIR = PROJECT_ROOT / 'results/minor_revision_experiments/raw_runs/estimator_matrix'
 
 
 # ─── Estimator definitions ──────────────────────────────────────────────────

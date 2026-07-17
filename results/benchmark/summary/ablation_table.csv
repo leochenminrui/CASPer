@@ -1,4 +1,0 @@
-model,group,split,R2_mean,R2_SD,Spearman_mean,Spearman_SD,n_seeds
-chem_A_xgb,see_legend,random,0.4253,0.0097,0.7144,0.0074,5
-chem_site_AB_xgb,see_legend,random,0.4460,0.0209,0.7323,0.0108,5
-full_ABC_xgb,see_legend,random,0.4665,0.0056,0.7395,0.0060,5

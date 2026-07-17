@@ -39,7 +39,7 @@ def main():
       fz=FEATURIZER_REGISTRY[fkey](**kwargs);fz.fit(train)
       Xtr=np.nan_to_num(fz.transform(train));Xte=np.nan_to_num(fz.transform(test))[idx];names=fz.get_feature_names()
       for seed in range(5):
-        p=ROOT/f'results/benchmark/random/seed_{seed}/{mid}/best_params.json'
+        p=ROOT/f'results/minor_revision_experiments/raw_runs/primary_ablation/random/seed_{seed}/{mid}/best_params.json'
         params=json.loads(p.read_text())
         model=XGBRegressor(**params,tree_method='hist',verbosity=0,n_jobs=8,random_state=seed)
         model.fit(Xtr,y,verbose=False)

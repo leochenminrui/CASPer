@@ -321,7 +321,8 @@ class BenchmarkRunner:
         self.config = config
         self.bench_cfg = config.get('benchmark', {})
         self.output_base = Path(config.get('output', {}).get(
-            'base_dir', 'results/benchmark'))
+            'base_dir',
+            'results/minor_revision_experiments/raw_runs/primary_ablation'))
 
     def run(self, models: Optional[List[str]] = None,
             splits: Optional[List[str]] = None,

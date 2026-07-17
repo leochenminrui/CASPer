@@ -25,7 +25,7 @@ def main():
  for sp in ['random','sequence_cluster']:
   for fs in list(NAME)[:7]:
    for seed in SEEDS:
-    p=ROOT/f'results/benchmark/{sp}/seed_{seed}/{MID[fs]}/metrics.json';d=json.loads(p.read_text());t=d['test_metrics']
+    p=ROOT/f'results/minor_revision_experiments/raw_runs/primary_ablation/{sp}/seed_{seed}/{MID[fs]}/metrics.json';d=json.loads(p.read_text());t=d['test_metrics']
     if d.get('status')!='completed' or sum(1 for _ in p.with_name('optuna_trials.csv').open())-1!=50:raise RuntimeError(f'invalid {p}')
     rows.append({'split':sp,'feature_set_id':fs,'feature_set':NAME[fs],'estimator':'XGBoost','seed':seed,**{m:t[m] for m in METS},'validation_score':d['val_metrics']['rmse'],'runtime_seconds':d.get('runtime_seconds',np.nan),'status':'completed','prediction_file':str(p.with_name('predictions.csv').relative_to(ROOT)),'best_params_json':json.dumps(d['best_params'],sort_keys=True)})
  rdf=pd.DataFrame(rows);rdf.to_csv(OUT/'primary_ablation/seed_level_results.csv',index=False)
@@ -39,7 +39,7 @@ def main():
  for safe,fs in fmap.items():
   for ek,en in emap.items():
    for seed in SEEDS:
-    p=ROOT/f'results/benchmark/estimator_comparison/{safe}_{ek}/seed_{seed}/metrics.json';d=json.loads(p.read_text());t=d['test_metrics'];er.append({'feature_set_id':fs,'feature_set':NAME[fs],'estimator':en,'estimator_id':ek,'seed':seed,**{m:t[m] for m in METS},'validation_score':d.get('best_validation_rmse',d.get('val_metrics',{}).get('rmse',np.nan)),'runtime_seconds':d.get('runtime_seconds',np.nan),'status':'completed','convergence_note':'See execution log; ElasticNet/SVR emitted convergence warnings in some trials.' if ek in ['elasticnet','svr'] else '','best_params_json':json.dumps(d['best_params'],sort_keys=True),'source':str(p.relative_to(ROOT))})
+    p=ROOT/f'results/minor_revision_experiments/raw_runs/estimator_matrix/{safe}_{ek}/seed_{seed}/metrics.json';d=json.loads(p.read_text());t=d['test_metrics'];er.append({'feature_set_id':fs,'feature_set':NAME[fs],'estimator':en,'estimator_id':ek,'seed':seed,**{m:t[m] for m in METS},'validation_score':d.get('best_validation_rmse',d.get('val_metrics',{}).get('rmse',np.nan)),'runtime_seconds':d.get('runtime_seconds',np.nan),'status':'completed','convergence_note':'See execution log; ElasticNet/SVR emitted convergence warnings in some trials.' if ek in ['elasticnet','svr'] else '','best_params_json':json.dumps(d['best_params'],sort_keys=True),'source':str(p.relative_to(ROOT))})
  edf=pd.DataFrame(er);edf.to_csv(OUT/'estimator_matrix/seed_level_results.csv',index=False);es=[]
  for (e,fs),g in edf.groupby(['estimator','feature_set_id']):
   for m in METS:
@@ -52,7 +52,7 @@ def main():
    for m in METS:
     def vals(fs):
      if fs in ['ECFP','RDKit']:
-      return np.array([json.loads((ROOT/f'results/benchmark/{sp}/seed_{s}/{MID[fs]}/metrics.json').read_text())['test_metrics'][m] for s in SEEDS])
+      return np.array([json.loads((ROOT/f'results/minor_revision_experiments/raw_runs/baselines/{sp}/seed_{s}/{MID[fs]}/metrics.json').read_text())['test_metrics'][m] for s in SEEDS])
      return rdf[(rdf.split==sp)&(rdf.feature_set_id==fs)].sort_values('seed')[m].to_numpy()
     d=vals(x)-vals(y);a=ci(d);specs.append({'family':'primary','split':sp,'comparison':f'{NAME[x]} minus {NAME[y]}','metric':m,'mean_difference':a[0],'sample_sd':a[1],'ci95_low':a[2],'ci95_high':a[3],'ci_excludes_zero':a[2]>0 or a[3]<0,'seed_differences_json':json.dumps(d.tolist()),'test':'exact paired sign-flip permutation','p_value_unadjusted':signflip(d),'n_pairs':5})
  for m in METS:

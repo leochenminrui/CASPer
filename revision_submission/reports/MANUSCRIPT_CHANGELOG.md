@@ -3,7 +3,8 @@
 ## Repository and pipeline
 
 - Created protected branch `minor-revision-complete`.
-- Archived all submission-related assets available in the repository under `revision_submission/source_archive/`.
+- Consolidated every protocol-compatible raw run under `results/minor_revision_experiments/raw_runs/`, then removed superseded result trees, figures, scripts, documentation, and duplicate submission assets.
+- Retained only the corrected data, fixed splits, required production code, final experiment/statistical/plotting scripts, tests, frozen results, and final submission materials.
 - Repaired classical-ML loading so descriptor experiments do not require optional PyTorch wrappers.
 - Corrected ablation feature-name projection so names match matrix columns.
 - Updated obsolete split-test fixtures to comply with the production sample-ID and amino-acid schemas.

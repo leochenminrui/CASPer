@@ -1,3 +1,0 @@
-model_id,mean_pairwise_accuracy,std_pairwise_accuracy,n_families
-chem_A_xgb,0.6367904063098193,0.18321742323308232,49
-chem_site_AB_xgb,0.6654413063751573,0.14125179528781906,49

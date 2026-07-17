@@ -45,7 +45,7 @@ def test_prediction_alignment_and_primary_completeness():
   p=pd.read_csv(ROOT/r.prediction_file);s=load_samples(ROOT/f'data/splits/CycPeptMPDB_PAMPA/{r.split}/test.jsonl');assert p.sample_id.tolist()==[x.sample_id for x in s];assert np.allclose(p.y_true,[x.label for x in s])
 
 def test_estimator_completeness_and_resume_validation():
- d=pd.read_csv(ROOT/'results/minor_revision_experiments/estimator_matrix/seed_level_results.csv');assert len(d)==175;assert (d.status=='completed').all();p=ROOT/'results/benchmark/random/seed_0/chem_A_xgb/metrics.json';assert valid(p)
+ d=pd.read_csv(ROOT/'results/minor_revision_experiments/estimator_matrix/seed_level_results.csv');assert len(d)==175;assert (d.status=='completed').all();p=ROOT/'results/minor_revision_experiments/raw_runs/primary_ablation/random/seed_0/chem_A_xgb/metrics.json';assert valid(p)
 
 def test_grouped_resampling_keeps_groups_intact():
  groups=np.array(['a','a','b','b','c']);pick=np.array(['b','a','b']);ix=np.concatenate([np.flatnonzero(groups==g) for g in pick]);assert groups[ix].tolist()==['b','b','a','a','b','b']
