@@ -1,0 +1,74 @@
+Feature_ID,Group,Subgroup,Feature_Name,Human_Readable_Definition,Computation_Method,Feature_Type,Order_Invariant,Data_Source,Value_Range,Notes
+1,A,Global_Chemistry,mol_weight,Molecular weight (Da),RDKit Descriptors.MolWt on full modified peptide SMILES,continuous,yes,SMILES,400-2000,Computed from complete modified structure
+2,A,Global_Chemistry,logp,Octanol-water partition coefficient,RDKit Descriptors.MolLogP,continuous,yes,SMILES,-5 to +5,Lipophilicity measure
+3,A,Global_Chemistry,tpsa,Topological polar surface area (Ų),RDKit Descriptors.TPSA,continuous,yes,SMILES,50-500,Membrane permeability predictor
+4,A,Global_Chemistry,num_h_acceptors,Number of hydrogen bond acceptors,RDKit Descriptors.NumHAcceptors,count,yes,SMILES,0-40,Lipinski rule component
+5,A,Global_Chemistry,num_h_donors,Number of hydrogen bond donors,RDKit Descriptors.NumHDonors,count,yes,SMILES,0-30,Lipinski rule component
+6,A,Global_Chemistry,num_rotatable_bonds,Number of rotatable bonds,RDKit Descriptors.NumRotatableBonds,count,yes,SMILES,10-80,Molecular flexibility measure
+7,A,Global_Chemistry,num_aromatic_rings,Number of aromatic rings,RDKit rdMolDescriptors.CalcNumAromaticRings,count,yes,SMILES,0-10,Aromaticity measure
+8,A,Global_Chemistry,num_aliphatic_rings,Number of aliphatic rings,RDKit rdMolDescriptors.CalcNumAliphaticRings,count,yes,SMILES,0-5,Ring system complexity
+9,A,Global_Chemistry,num_edits,Total number of chemical modifications,len(sample.edits),count,yes,edit_metadata,0-10,Simple count
+10,A,Global_Chemistry,num_unique_edit_families,Number of unique edit family types,len(set(edit.edit_family for edit in sample.edits)),count,yes,edit_metadata,0-5,Edit diversity
+11,B1,Anchor_Position_Statistics,anchor_count_total,Total number of anchor positions with multiplicity,len(all_anchor_positions),count,yes,anchor_positions,0-15,Counts repeated anchors
+12,B1,Anchor_Position_Statistics,anchor_count_unique,Number of unique anchor positions,len(set(all_anchor_positions)),count,yes,anchor_positions,0-10,De-duplicated count
+13,B1,Anchor_Position_Statistics,anchor_density,Anchor density relative to sequence length,anchor_count_unique / sequence_length,fraction,yes,anchor_positions + sequence,0-1,Fraction of modified positions
+14,B1,Anchor_Position_Statistics,anchor_pos_mean,Mean anchor position (0-indexed),np.mean(all_anchor_positions),mean,yes,anchor_positions,0 to seq_len-1,Position centroid
+15,B1,Anchor_Position_Statistics,anchor_pos_std,Standard deviation of anchor positions,np.std(all_anchor_positions),std,yes,anchor_positions,0 to ~seq_len/2,Positional spread
+16,B1,Anchor_Position_Statistics,anchor_pos_span,Span between min and max anchor positions,max(all_anchor_positions) - min(all_anchor_positions),range,yes,anchor_positions,0 to seq_len-1,Modification region width
+17,B2,Anchor_Residue_Composition,anchor_res_A,Frequency of Alanine at anchor positions,count(A in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+18,B2,Anchor_Residue_Composition,anchor_res_C,Frequency of Cysteine at anchor positions,count(C in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+19,B2,Anchor_Residue_Composition,anchor_res_D,Frequency of Aspartate at anchor positions,count(D in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+20,B2,Anchor_Residue_Composition,anchor_res_E,Frequency of Glutamate at anchor positions,count(E in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+21,B2,Anchor_Residue_Composition,anchor_res_F,Frequency of Phenylalanine at anchor positions,count(F in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+22,B2,Anchor_Residue_Composition,anchor_res_G,Frequency of Glycine at anchor positions,count(G in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+23,B2,Anchor_Residue_Composition,anchor_res_H,Frequency of Histidine at anchor positions,count(H in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+24,B2,Anchor_Residue_Composition,anchor_res_I,Frequency of Isoleucine at anchor positions,count(I in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+25,B2,Anchor_Residue_Composition,anchor_res_K,Frequency of Lysine at anchor positions,count(K in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+26,B2,Anchor_Residue_Composition,anchor_res_L,Frequency of Leucine at anchor positions,count(L in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+27,B2,Anchor_Residue_Composition,anchor_res_M,Frequency of Methionine at anchor positions,count(M in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+28,B2,Anchor_Residue_Composition,anchor_res_N,Frequency of Asparagine at anchor positions,count(N in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+29,B2,Anchor_Residue_Composition,anchor_res_P,Frequency of Proline at anchor positions,count(P in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+30,B2,Anchor_Residue_Composition,anchor_res_Q,Frequency of Glutamine at anchor positions,count(Q in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+31,B2,Anchor_Residue_Composition,anchor_res_R,Frequency of Arginine at anchor positions,count(R in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+32,B2,Anchor_Residue_Composition,anchor_res_S,Frequency of Serine at anchor positions,count(S in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+33,B2,Anchor_Residue_Composition,anchor_res_T,Frequency of Threonine at anchor positions,count(T in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+34,B2,Anchor_Residue_Composition,anchor_res_V,Frequency of Valine at anchor positions,count(V in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+35,B2,Anchor_Residue_Composition,anchor_res_W,Frequency of Tryptophan at anchor positions,count(W in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+36,B2,Anchor_Residue_Composition,anchor_res_Y,Frequency of Tyrosine at anchor positions,count(Y in anchor_residues) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Per-AA frequency at anchors
+37,B3,Anchor_Local_Context,anchor_hydrophobic_frac,Fraction of hydrophobic residues at anchors,count(ILVAFWM at anchors) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Hydrophobic: ILVAFWM
+38,B3,Anchor_Local_Context,anchor_charged_frac,Fraction of charged residues at anchors,count(DEKRH at anchors) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Charged: DEKRH
+39,B3,Anchor_Local_Context,anchor_polar_frac,Fraction of polar residues at anchors,count(STNQYC at anchors) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Polar: STNQYC
+40,B3,Anchor_Local_Context,anchor_aromatic_frac,Fraction of aromatic residues at anchors,count(FYW at anchors) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Aromatic: FYW
+41,B3,Anchor_Local_Context,anchor_small_frac,Fraction of small residues at anchors,count(GAS at anchors) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Small: GAS
+42,B3,Anchor_Local_Context,anchor_proline_frac,Fraction of proline at anchors,count(P at anchors) / len(anchor_residues),fraction,yes,anchor_positions + sequence,0-1,Proline as structural disruptor
+43,B3,Anchor_Local_Context,terminal_edit_frac,Fraction of edits that are terminal,count(n_terminal or c_terminal edits) / len(edits),fraction,yes,edit_metadata,0-1,Terminal vs internal edits
+44,B3,Anchor_Local_Context,n_terminal_edit_count,Count of N-terminal edits,sum(1 for e in edits if e.edit_family == n_terminal),count,yes,edit_metadata,0-3,Absolute count
+45,B3,Anchor_Local_Context,c_terminal_edit_count,Count of C-terminal edits,sum(1 for e in edits if e.edit_family == c_terminal),count,yes,edit_metadata,0-3,Absolute count
+46,C,Attachment_Edit_Family,edit_family_n_terminal,Count of N-terminal family edits,count(edit_family == n_terminal),count,yes,edit_metadata,0-3,Edit family distribution
+47,C,Attachment_Edit_Family,edit_family_c_terminal,Count of C-terminal family edits,count(edit_family == c_terminal),count,yes,edit_metadata,0-3,Edit family distribution
+48,C,Attachment_Edit_Family,edit_family_sidechain,Count of sidechain family edits,count(edit_family == sidechain),count,yes,edit_metadata,0-10,Edit family distribution
+49,C,Attachment_Edit_Family,edit_family_backbone,Count of backbone family edits,count(edit_family == backbone),count,yes,edit_metadata,0-10,Edit family distribution
+50,C,Attachment_Edit_Family,edit_family_cyclization,Count of cyclization family edits,count(edit_family == cyclization),count,yes,edit_metadata,0-2,Edit family distribution
+51,C,Attachment_Edit_Family,edit_family_substitution,Count of substitution family edits,count(edit_family == substitution),count,yes,edit_metadata,0-10,Edit family distribution
+52,C,Attachment_Edit_Family,edit_family_other,Count of other family edits,count(edit_family == other),count,yes,edit_metadata,0-5,Edit family distribution
+53,C,Attachment_Edit_Type_Diversity,edit_type_count_unique,Number of unique edit types,len(set(edit.edit_type for edit in edits)),count,yes,edit_metadata,0-10,Edit type richness
+54,C,Attachment_Edit_Type_Diversity,edit_type_entropy,Shannon entropy of edit types,-sum(p * log2(p) for each type),entropy,yes,edit_metadata,0 to ~3,Type diversity measure
+55,C,Attachment_Edit_Type_Diversity,attachment_type_count_unique,Number of unique attachment semantics,len(set(edit.attachment_semantics for edit in edits)),count,yes,edit_metadata,0-5,Attachment mode diversity
+56,C,Attachment_Edit_Type_Diversity,has_cyclization,Binary indicator for cyclization,1 if any(edit_family == cyclization) else 0,binary,yes,edit_metadata,0 or 1,Cyclic topology flag
+57,C,Attachment_Edit_Type_Diversity,has_backbone_mod,Binary indicator for backbone modification,1 if any(edit_family == backbone) else 0,binary,yes,edit_metadata,0 or 1,Backbone modification flag
+58,C,Attachment_Specific_Edit_Types,edit_type_n_methylation,Count of N-methylation edits,count(edit_type == n_methylation),count,yes,edit_metadata,0-10,Specific edit type
+59,C,Attachment_Specific_Edit_Types,edit_type_d_amino_acid,Count of D-amino acid edits,count(edit_type == d_amino_acid),count,yes,edit_metadata,0-10,Specific edit type
+60,C,Attachment_Specific_Edit_Types,edit_type_non_standard_aa,Count of non-standard AA substitutions,count(edit_type == non_standard_aa),count,yes,edit_metadata,0-10,Specific edit type
+61,C,Attachment_Specific_Edit_Types,edit_type_head_to_tail_cyclization,Count of head-to-tail cyclization,count(edit_type == head_to_tail_cyclization),count,yes,edit_metadata,0-1,Specific edit type
+62,C,Attachment_Specific_Edit_Types,edit_type_sidechain_cyclization,Count of sidechain cyclization,count(edit_type == sidechain_cyclization),count,yes,edit_metadata,0-2,Specific edit type
+63,C,Attachment_Specific_Edit_Types,edit_type_disulfide,Count of disulfide bridges,count(edit_type == disulfide),count,yes,edit_metadata,0-2,Specific edit type
+64,C,Attachment_Specific_Edit_Types,edit_type_acetylation,Count of acetylation edits,count(edit_type == acetylation),count,yes,edit_metadata,0-2,Specific edit type
+65,C,Attachment_Specific_Edit_Types,edit_type_amidation,Count of amidation edits,count(edit_type == amidation),count,yes,edit_metadata,0-2,Specific edit type
+66,C,Attachment_Specific_Edit_Types,edit_type_phosphorylation,Count of phosphorylation edits,count(edit_type == phosphorylation),count,yes,edit_metadata,0-2,Specific edit type
+67,C,Attachment_Specific_Edit_Types,edit_type_other,Count of other edit types,sum(counts for types not in specific list),count,yes,edit_metadata,0-5,Catch-all category
+68,C,Attachment_Multi_Edit,anchor_pair_count,Number of edits with paired anchors,sum(1 for e in edits if len(e.anchor_positions) > 1),count,yes,anchor_positions,0-2,Multi-anchor edits (e.g. cyclization)
+69,C,Attachment_Multi_Edit,cyclization_ring_size,Ring size for cyclic peptides,sequence_length if cyclic else 0,count,yes,sequence + topology,0 to ~20,Cyclic topology measure
+70,C,Attachment_Multi_Edit,anchor_overlap_count,Number of positions with multiple edits,sum(1 for pos in anchor_positions if count(pos) > 1),count,yes,anchor_positions,0-5,Overlapping anchor sites
+71,C,Attachment_Multi_Edit,sequence_length,Total peptide sequence length,len(sample.sequence),count,yes,sequence,5-20,Peptide size
+72,C,Attachment_Multi_Edit,sequence_cyclic,Binary indicator for cyclic sequence,1 if cyclic else 0,binary,yes,topology,0 or 1,Topology flag
+73,C,Attachment_Multi_Edit,modification_rate,Modification density,len(edits) / sequence_length,fraction,yes,edit_metadata + sequence,0-2,Overall edit density

@@ -11,6 +11,7 @@ import logging
 import traceback
 import warnings
 import sys
+import time
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 import numpy as np
@@ -96,6 +97,7 @@ def run_single_model(
         return result
 
     try:
+        run_started = time.perf_counter()
         # ── 1. Load data ─────────────────────────────────────────────────
         dataset = "CycPeptMPDB_PAMPA"
         # Descriptor benchmarks only need serialized PEM samples.  Loading them
@@ -267,6 +269,9 @@ def run_single_model(
             'test_metrics': test_metrics,
             'best_params': best_params,
             'feature_importance_top30': feature_importance,
+            'runtime_seconds': time.perf_counter() - run_started,
+            'selection_metric': 'validation RMSE',
+            'n_optuna_trials': n_trials if hpo_used else 0,
         }
 
         with open(metrics_file, 'w') as f:

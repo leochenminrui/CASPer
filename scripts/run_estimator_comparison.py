@@ -126,11 +126,11 @@ def run_one(est_key, feat_key, seed):
                 min_child_weight=trial.suggest_int('min_child_weight', 1, 10),
                 reg_alpha=trial.suggest_float('reg_alpha', 1e-6, 1.0, log=True),
                 reg_lambda=trial.suggest_float('reg_lambda', 1e-6, 10.0, log=True),
-                tree_method='hist', verbosity=0, n_jobs=-1, random_state=seed)
+                tree_method='hist', verbosity=0, n_jobs=8, random_state=seed)
             m.fit(X_train, y_train, verbose=False)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
         best_params, best_val_rmse = _tune(obj, f"xgb_{feat_key}_s{seed}")
-        model = XGBRegressor(tree_method='hist', verbosity=0, n_jobs=-1, random_state=seed, **best_params)
+        model = XGBRegressor(tree_method='hist', verbosity=0, n_jobs=8, random_state=seed, **best_params)
 
     elif est_key == 'ridge':
         def obj(trial):
@@ -158,11 +158,11 @@ def run_one(est_key, feat_key, seed):
                 max_depth=trial.suggest_int('max_depth', 3, 20),
                 min_samples_split=trial.suggest_int('min_samples_split', 2, 15),
                 min_samples_leaf=trial.suggest_int('min_samples_leaf', 1, 10),
-                n_jobs=-1, random_state=seed)
+                n_jobs=8, random_state=seed)
             m.fit(X_train, y_train)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
         best_params, best_val_rmse = _tune(obj, f"rf_{feat_key}_s{seed}")
-        model = RandomForestRegressor(n_jobs=-1, random_state=seed, **best_params)
+        model = RandomForestRegressor(n_jobs=8, random_state=seed, **best_params)
 
     elif est_key == 'svr':
         def obj(trial):

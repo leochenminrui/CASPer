@@ -1,0 +1,246 @@
+Experiment,Split,Estimator,Feature set,Seed,Search budget,Status,Reason
+primary_ablation,random,XGBoost,Chemistry,0,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry,1,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry,2,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry,3,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry,4,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Context,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Context,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Context,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Context,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Context,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site,0,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site,1,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site,2,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site,3,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site,4,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Context,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Context,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Context,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Context,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Context,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site + Context,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site + Context,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site + Context,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site + Context,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Site + Context,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site + Context,0,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site + Context,1,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site + Context,2,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site + Context,3,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,random,XGBoost,Chemistry + Site + Context,4,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry,0,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry,1,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry,2,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry,3,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry,4,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Context,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Context,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Context,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Context,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Context,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site,0,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site,1,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site,2,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site,3,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site,4,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Context,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Context,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Context,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Context,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Context,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site + Context,0,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site + Context,1,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site + Context,2,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site + Context,3,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Site + Context,4,50,newly completed run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site + Context,0,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site + Context,1,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site + Context,2,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site + Context,3,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+primary_ablation,sequence_cluster,XGBoost,Chemistry + Site + Context,4,50,valid reusable run,"Validated metrics, 50 trials, predictions and held-out test evaluation."
+estimator_matrix,random,Ridge,Chemistry,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Context,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Context,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Context,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Context,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Context,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Context,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Context,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Context,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Context,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Context,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Context,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Context,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Context,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Context,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Context,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Context,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Context,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Context,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Context,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Context,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Context,0,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Context,1,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Context,2,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Context,3,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Context,4,10,newly completed run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Ridge,Chemistry + Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,ElasticNet,Chemistry + Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,Random Forest,Chemistry + Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,RBF-SVR,Chemistry + Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site + Context,0,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site + Context,1,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site + Context,2,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site + Context,3,10,valid reusable run,Validated metrics and protocol-compatible search budget.
+estimator_matrix,random,XGBoost,Chemistry + Site + Context,4,10,valid reusable run,Validated metrics and protocol-compatible search budget.

@@ -1,2 +1,2 @@
-comparison,mean_difference,ci95_low,ci95_high,proportion_improved,proportion_tied,proportion_worsened,sign_test_p_value,n_families
-Chemistry + Site minus Chemistry,0.02865090006533802,-0.007741741936005779,0.06768427624235292,0.46938775510204084,0.08163265306122448,0.4489795918367347,1.0,49
+comparison,mean_difference,ci95_low,ci95_high,proportion_improved,proportion_tied,proportion_worsened,exact_sign_test_p,n_families_total,n_families_valid,bootstrap_replicates,interval
+Chemistry + Site minus Chemistry,-0.017023073537722044,-0.043238758294253506,0.008661202802944168,0.3958333333333333,0.0,0.6041666666666666,0.19341265286193737,49,48,5000,percentile

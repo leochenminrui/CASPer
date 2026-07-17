@@ -165,11 +165,6 @@ def main():
               f"[{cis['r2']['lower']:.4f}, {cis['r2']['upper']:.4f}]")
 
     all_cis["anchor_aware_descriptor"] = seed_cis
-
-
-
-        all_cis[variant_name] = variant_cis
-
     # ===== Mechanism controls =====
     print("\nComputing CIs for mechanism controls...")
 

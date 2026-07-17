@@ -1,0 +1,11 @@
+Control_Type,Comparison,Metric,Baseline_Value,Control_Value,Degradation,Bootstrap_CI_Lower,Bootstrap_CI_Upper,Bootstrap_Std,Test_Type,Test_Statistic,P_Value,Significant_at_0.05,Significant_at_0.01,Significant_at_0.001,Effect_Size,Interpretation
+Positional_Control,Correct vs Wrong Anchor,R²,0.472,0.383,-0.089,-0.119,-0.059,0.015,Wilcoxon (SE),-4.06,5.2e-05,Yes,Yes,Yes,-0.123,Significant performance loss with wrong anchors
+Positional_Control,Correct vs Coarse Position,R²,0.472,0.410,-0.062,-0.092,-0.032,0.015,Wilcoxon (SE),-3.25,0.0012,Yes,Yes,No,-0.099,Coarse position inferior to exact anchors
+Positional_Control,Correct vs Wrong Anchor,Spearman,0.733,0.676,-0.057,-0.077,-0.037,0.010,Not tested,N/A,N/A,N/A,N/A,N/A,N/A,Ranking ability degraded with wrong anchors
+Positional_Control,Correct vs Coarse Position,Spearman,0.733,0.699,-0.034,-0.054,-0.014,0.010,Not tested,N/A,N/A,N/A,N/A,N/A,N/A,Coarse position degrades ranking
+Position_Only_Baseline,Position-only vs Descriptor-only,R²,0.438,0.267,-0.171,N/A,N/A,N/A,Comparison,N/A,N/A,N/A,N/A,N/A,N/A,Chemistry is primary signal; positions contribute but insufficient alone
+Position_Only_Baseline,Position-only vs Anchor-aware,R²,0.472,0.267,-0.205,N/A,N/A,N/A,Comparison,N/A,N/A,N/A,N/A,N/A,N/A,Position-only baseline much weaker than full model
+Graded_Perturbation,Shift 0 vs Shift ±1,R²,0.472,0.245 (mean),-0.227,N/A,N/A,N/A,Deterministic shift,N/A,N/A,N/A,N/A,N/A,N/A,Single-residue error causes ~48% performance loss
+Graded_Perturbation,Shift 0 vs Shift ±2,R²,0.472,-0.064 (mean),-0.536,N/A,N/A,N/A,Deterministic shift,N/A,N/A,N/A,N/A,N/A,N/A,Two-residue error worse than trivial baseline
+Graded_Perturbation,Shift 0 vs Shift ±5,R²,0.472,-0.311 (mean),-0.783,N/A,N/A,N/A,Deterministic shift,N/A,N/A,N/A,N/A,N/A,N/A,Large shifts cause catastrophic failure
+Graded_Perturbation,Monotonic trend test,Spearman ρ (R² vs |shift|),-0.915 (correlation with shift magnitude),N/A,N/A,N/A,N/A,N/A,Spearman correlation,-0.915,5.3e-04,Yes,Yes,Yes,N/A,Strong monotonic degradation with increasing shift
