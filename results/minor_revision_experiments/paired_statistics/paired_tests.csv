@@ -1,0 +1,29 @@
+split,comparison,metric,test,statistic,p_value,n_pairs,evidence
+random,Chemistry + Site + Context minus Chemistry,r2,two-sided paired t-test,15.063808413124253,0.00011317733390486078,5,directional
+random,Chemistry + Site + Context minus Chemistry,rmse,two-sided paired t-test,-15.584164762744273,9.898943404245838e-05,5,directional
+random,Chemistry + Site + Context minus Chemistry,mae,two-sided paired t-test,-19.795751589477817,3.841588027736435e-05,5,directional
+random,Chemistry + Site + Context minus Chemistry,spearman,two-sided paired t-test,8.964380801748193,0.0008567880188560589,5,directional
+random,Chemistry + Site minus Chemistry,r2,two-sided paired t-test,1.8534132468993834,0.13744487871219407,5,inconclusive
+random,Chemistry + Site minus Chemistry,rmse,two-sided paired t-test,-1.8617038907306456,0.13613166820211953,5,inconclusive
+random,Chemistry + Site minus Chemistry,mae,two-sided paired t-test,-1.8128988372075725,0.14406098556027086,5,inconclusive
+random,Chemistry + Site minus Chemistry,spearman,two-sided paired t-test,2.5652605162335598,0.06229025899768412,5,inconclusive
+random,Chemistry + Site + Context minus Chemistry + Site,r2,two-sided paired t-test,2.1384249867145972,0.09926330668764746,5,inconclusive
+random,Chemistry + Site + Context minus Chemistry + Site,rmse,two-sided paired t-test,-2.147134290573431,0.0982972028455071,5,inconclusive
+random,Chemistry + Site + Context minus Chemistry + Site,mae,two-sided paired t-test,-1.9779930498640639,0.11907476212969344,5,inconclusive
+random,Chemistry + Site + Context minus Chemistry + Site,spearman,two-sided paired t-test,1.148084974323306,0.31492569308189267,5,inconclusive
+random,Chemistry + Context minus Chemistry,r2,two-sided paired t-test,-2.427449393574968,0.0721795369097155,5,inconclusive
+random,Chemistry + Context minus Chemistry,rmse,two-sided paired t-test,2.4376416912110055,0.07138975869262876,5,inconclusive
+random,Chemistry + Context minus Chemistry,mae,two-sided paired t-test,1.4674460174582684,0.21615845677235868,5,inconclusive
+random,Chemistry + Context minus Chemistry,spearman,two-sided paired t-test,-1.738816928052926,0.15705507121601345,5,inconclusive
+sequence_cluster,Chemistry + Site minus Chemistry,r2,two-sided paired t-test,4.204360520249139,0.013647871405468514,5,directional
+sequence_cluster,Chemistry + Site minus Chemistry,rmse,two-sided paired t-test,-4.1558347998282965,0.014192985074174392,5,directional
+sequence_cluster,Chemistry + Site minus Chemistry,mae,two-sided paired t-test,-3.930720456188352,0.017092643943184466,5,directional
+sequence_cluster,Chemistry + Site minus Chemistry,spearman,two-sided paired t-test,1.7152991944485876,0.1614359165096293,5,inconclusive
+sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,r2,two-sided paired t-test,1.2519181360104639,0.2788094881117664,5,inconclusive
+sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,rmse,two-sided paired t-test,-1.2439439945136737,0.2814381233719919,5,inconclusive
+sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,mae,two-sided paired t-test,-1.0941583309426328,0.33535347471354016,5,inconclusive
+sequence_cluster,Chemistry + Site minus Chemistry + Site + Context,spearman,two-sided paired t-test,1.9153354681905586,0.12795695811919017,5,inconclusive
+sequence_cluster,Chemistry + Site + Context minus Chemistry,r2,two-sided paired t-test,0.5329387939457809,0.6223083817007156,5,inconclusive
+sequence_cluster,Chemistry + Site + Context minus Chemistry,rmse,two-sided paired t-test,-0.5678106001710689,0.600517917795061,5,inconclusive
+sequence_cluster,Chemistry + Site + Context minus Chemistry,mae,two-sided paired t-test,-1.8672187070412167,0.13526562704514172,5,inconclusive
+sequence_cluster,Chemistry + Site + Context minus Chemistry,spearman,two-sided paired t-test,-0.9233059123292918,0.408102121284988,5,inconclusive

@@ -1,0 +1,2 @@
+status,reason
+BLOCKED,Committed cutoff summaries lack compound-level predictions; legacy generator is non-runnable.

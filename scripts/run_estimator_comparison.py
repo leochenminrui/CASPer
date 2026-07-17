@@ -9,7 +9,7 @@ holds across model families, without the cost of full Optuna per estimator.
 Runtime: ~5 min total.
 """
 
-import sys, json, csv, logging
+import sys, json, csv, logging, os, time
 from pathlib import Path
 from collections import defaultdict
 import numpy as np
@@ -29,7 +29,7 @@ from xgboost import XGBRegressor
 from scipy.stats import spearmanr
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
-from data.loader import load_pem_dataset
+from data.serialization import load_samples
 from benchmark.featurizers import FEATURIZER_REGISTRY
 
 SEEDS = [0, 1, 2, 3, 4]  # same as main benchmark
@@ -56,6 +56,8 @@ FEATURES = {
     'Chem':             ('anchor_aware',   {'descriptor_set': 'basic', 'ablation_mode': 'chemistry_only'}),
     'Site':             ('site_only',      {}),
     'Context':          ('context_only',   {}),
+    'Chem+Site':        ('anchor_aware',   {'descriptor_set': 'basic', 'ablation_mode': 'chemistry_anchors'}),
+    'Chem+Context':     ('anchor_aware',   {'descriptor_set': 'basic', 'ablation_mode': 'chemistry_attachment'}),
     'Site+Context':     ('anchor_aware',   {'descriptor_set': 'basic', 'ablation_mode': 'site_context_only'}),
     'Chem+Site+Context':('anchor_aware',   {'descriptor_set': 'basic', 'ablation_mode': 'full'}),
 }
@@ -81,8 +83,12 @@ def run_one(est_key, feat_key, seed):
     model_dir.mkdir(parents=True, exist_ok=True)
 
     # Load
-    data = load_pem_dataset("CycPeptMPDB_PAMPA", "random")
+    started = time.perf_counter()
+    split_dir = PROJECT_ROOT / 'data/splits/CycPeptMPDB_PAMPA/random'
+    data = {name: load_samples(split_dir / f'{name}.jsonl')
+            for name in ('train', 'val', 'test')}
     fzr = FEATURIZER_REGISTRY[feat_key_full](**feat_kwargs)
+    fzr.fit(data['train'])
     X_train = np.nan_to_num(fzr.transform(data['train']))
     X_val   = np.nan_to_num(fzr.transform(data['val']))
     X_test  = np.nan_to_num(fzr.transform(data['test']))
@@ -100,11 +106,13 @@ def run_one(est_key, feat_key, seed):
 
     # ── Common objective wrapper ─────────────────────────────────────────
     def _tune(objective_fn, study_name):
-        study = optuna.create_study(direction='minimize', study_name=study_name)
+        study = optuna.create_study(direction='minimize', study_name=study_name,
+                                    sampler=optuna.samplers.TPESampler(seed=seed))
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
         study.optimize(objective_fn, n_trials=N_TRIALS, show_progress_bar=False)
-        return study.best_params
+        study.trials_dataframe().to_csv(model_dir / 'optuna_trials.csv', index=False)
+        return study.best_params, float(study.best_value)
 
     # ── Per-estimator search spaces ───────────────────────────────────────
     if est_key == 'xgboost':
@@ -121,7 +129,7 @@ def run_one(est_key, feat_key, seed):
                 tree_method='hist', verbosity=0, n_jobs=-1, random_state=seed)
             m.fit(X_train, y_train, verbose=False)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
-        best_params = _tune(obj, f"xgb_{feat_key}_s{seed}")
+        best_params, best_val_rmse = _tune(obj, f"xgb_{feat_key}_s{seed}")
         model = XGBRegressor(tree_method='hist', verbosity=0, n_jobs=-1, random_state=seed, **best_params)
 
     elif est_key == 'ridge':
@@ -129,7 +137,7 @@ def run_one(est_key, feat_key, seed):
             m = Ridge(alpha=trial.suggest_float('alpha', 0.01, 1e4, log=True), random_state=seed)
             m.fit(X_train, y_train)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
-        best_params = _tune(obj, f"ridge_{feat_key}_s{seed}")
+        best_params, best_val_rmse = _tune(obj, f"ridge_{feat_key}_s{seed}")
         model = Ridge(random_state=seed, **best_params)
 
     elif est_key == 'elasticnet':
@@ -140,7 +148,7 @@ def run_one(est_key, feat_key, seed):
                 max_iter=5000, random_state=seed)
             m.fit(X_train, y_train)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
-        best_params = _tune(obj, f"en_{feat_key}_s{seed}")
+        best_params, best_val_rmse = _tune(obj, f"en_{feat_key}_s{seed}")
         model = ElasticNet(max_iter=5000, random_state=seed, **best_params)
 
     elif est_key == 'random_forest':
@@ -153,7 +161,7 @@ def run_one(est_key, feat_key, seed):
                 n_jobs=-1, random_state=seed)
             m.fit(X_train, y_train)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
-        best_params = _tune(obj, f"rf_{feat_key}_s{seed}")
+        best_params, best_val_rmse = _tune(obj, f"rf_{feat_key}_s{seed}")
         model = RandomForestRegressor(n_jobs=-1, random_state=seed, **best_params)
 
     elif est_key == 'svr':
@@ -166,23 +174,34 @@ def run_one(est_key, feat_key, seed):
                 max_iter=10000)
             m.fit(X_train, y_train)
             return float(np.sqrt(np.mean((y_val - m.predict(X_val))**2)))
-        best_params = _tune(obj, f"svr_{feat_key}_s{seed}")
+        best_params, best_val_rmse = _tune(obj, f"svr_{feat_key}_s{seed}")
         model = SVR(kernel='rbf', max_iter=10000, **best_params)
 
     else:
         raise ValueError(f"Unknown estimator: {est_key}")
 
     model.fit(X_train, y_train)
+    y_val_pred = model.predict(X_val)
     y_pred = model.predict(X_test)
     metrics = compute_metrics(y_test, y_pred)
+    val_metrics = compute_metrics(y_val, y_val_pred)
+    runtime = time.perf_counter() - started
 
     result = {'feature_set': feat_key, 'estimator': est_key, 'family': family,
-              'seed': seed, 'test_metrics': metrics, 'hpo': True,
+              'seed': seed, 'split_type': 'random', 'status': 'completed',
+              'test_metrics': metrics, 'val_metrics': val_metrics,
+              'selection_metric': 'validation RMSE', 'best_validation_rmse': best_val_rmse,
+              'runtime_seconds': runtime, 'n_trials': N_TRIALS, 'hpo': True,
               'best_params': best_params, 'needs_scale': needs_scale}
     with open(model_dir / 'metrics.json', 'w') as f:
         json.dump(result, f, indent=2, default=str)
     with open(model_dir / 'best_params.json', 'w') as f:
         json.dump(best_params, f, indent=2)
+    with open(model_dir / 'predictions.csv', 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['sample_id','y_true','y_pred','split','seed','feature_set','estimator','sequence'])
+        for s, yt, yp in zip(data['test'], y_test, y_pred):
+            w.writerow([s.sample_id, float(yt), float(yp), 'test', seed, feat_key, est_key, s.sequence])
 
     logger.info(f"  [{feat_key} × {est_key}] seed={seed} R²={metrics['r2']:.4f} ρ={metrics['spearman']:.4f}")
     return result
@@ -198,7 +217,7 @@ def main():
         for est_key in ESTIMATORS:
             for seed in SEEDS:
                 fpath = OUTPUT_DIR / f"{safe_f}_{est_key}" / f"seed_{seed}" / "metrics.json"
-                if fpath.exists():
+                if fpath.exists() and os.environ.get('CASPER_FORCE_ESTIMATOR_MATRIX') != '1':
                     all_results.append(json.load(open(fpath)))
                     continue
                 try:
@@ -214,7 +233,7 @@ def main():
     labels = {k: v[0] for k, v in ESTIMATORS.items()}
     families = {k: v[1] for k, v in ESTIMATORS.items()}
 
-    feature_order = ['AA Comp', 'Chem', 'Site', 'Context', 'Site+Context', 'Chem+Site+Context']
+    feature_order = ['Chem', 'Site', 'Context', 'Chem+Site', 'Chem+Context', 'Site+Context', 'Chem+Site+Context']
     n_feat = len(feature_order)
     col_w = 13
 
@@ -241,10 +260,9 @@ def main():
                 all_vals.append(float('nan'))
                 row += f" {'...':>{col_w}}"
         # Trend check: Chem+Site+Context > Chem > AA Comp
-        vs_seq  = all_vals[0] if len(all_vals)>0 else np.nan
-        vs_chem = all_vals[1] if len(all_vals)>1 else np.nan
-        vs_full = all_vals[5] if len(all_vals)>5 else np.nan
-        trend = "✅ CONSISTENT" if (not np.isnan(vs_full) and not np.isnan(vs_chem) and not np.isnan(vs_seq) and vs_full > vs_chem > vs_seq) else ("⚠️DIFFERENT" if not np.isnan(vs_full) else "...")
+        vs_chem = all_vals[0] if len(all_vals)>0 else np.nan
+        vs_full = all_vals[6] if len(all_vals)>6 else np.nan
+        trend = "✅ FULL>CHEM" if (not np.isnan(vs_full) and vs_full > vs_chem) else ("⚠️DIFFERENT" if not np.isnan(vs_full) else "...")
         row += f"  {trend:>12}"
         print(row)
 
@@ -275,10 +293,9 @@ def main():
                 v = groups.get((feat, est), [])
                 row.extend([np.mean([x['test_metrics']['r2'] for x in v]) if v else float('nan'),
                             np.std([x['test_metrics']['r2'] for x in v], ddof=1) if len(v)>1 else 0])
-            vs_seq  = np.mean([x['test_metrics']['r2'] for x in groups.get(('AA Comp', est), [])]) if groups.get(('AA Comp', est)) else np.nan
             vs_chem = np.mean([x['test_metrics']['r2'] for x in groups.get(('Chem', est), [])]) if groups.get(('Chem', est)) else np.nan
             vs_full = np.mean([x['test_metrics']['r2'] for x in groups.get(('Chem+Site+Context', est), [])]) if groups.get(('Chem+Site+Context', est)) else np.nan
-            trend_ok = not np.isnan(vs_full) and not np.isnan(vs_chem) and not np.isnan(vs_seq) and vs_full > vs_chem > vs_seq
+            trend_ok = not np.isnan(vs_full) and not np.isnan(vs_chem) and vs_full > vs_chem
             w.writerow(row + [trend_ok])
 
     logger.info(f"\nSummary: {OUTPUT_DIR / 'comparison_summary.csv'}")

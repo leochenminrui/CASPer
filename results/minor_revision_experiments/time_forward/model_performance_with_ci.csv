@@ -1,0 +1,2 @@
+status,reason
+BLOCKED,Grouped confidence intervals require compound-level predictions.
