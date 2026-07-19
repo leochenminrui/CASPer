@@ -1,48 +1,65 @@
 # CASPer
 
-This repository contains the verified data, reproducible analysis code, tests,
-frozen benchmark results, and regenerated figures for:
+> Reproducible benchmarking for **Site-Conditioned Edit Chemistry for Cyclic
+> Peptide Permeability Modeling**
 
-**Site-Conditioned Edit Chemistry for Cyclic Peptide Permeability Modeling**
+CASPer packages the verified 7,224-sample dataset, fixed evaluation splits,
+production analysis code, frozen results, and publication-ready figures in one
+reproducible repository.
 
-## Repository layout
+## At a glance
 
-- `data/` — corrected 7,224-sample dataset and fixed random/cluster splits.
-- `src/` — minimal production code required by the retained pipelines and tests.
-- `configs/benchmark/primary_ablation.yaml` — final 50-trial primary protocol.
-- `scripts/` — final experiment, statistical-analysis, freeze, and plotting scripts.
-- `tests/` — validated test suite.
-- `results/final_experiments/` — frozen final tables, raw runs, predictions,
-  bootstraps, SHAP, scaffold, and time-forward outputs.
-- `results/final_experiments/figures/` — regenerated PNG/PDF figures.
-- `results/final_experiments/summary_tables/` — final human-readable tables.
+| Analysis | Status | Coverage |
+|---|:---:|---:|
+| Primary descriptor ablation | ✅ Complete | 70 / 70 runs |
+| Estimator × descriptor matrix | ✅ Complete | 175 / 175 runs |
+| SHAP interpretation | ✅ Complete | 5 seeds |
+| Time-forward diagnostics | ✅ Complete | 8 cutoffs |
+| Scaffold-focused ranking | ✅ Complete | 49 families |
+| Test suite | ✅ Passing | 28 / 28 tests |
 
-## Verified completion
+## Key result visualization
 
-- Primary descriptor ablation: 70/70 seed-level runs.
-- Estimator × descriptor matrix: 175/175 seed-level runs.
-- Five-seed SHAP: complete.
-- Time-forward diagnostics: eight cutoffs complete.
-- Scaffold ranking: 49 peptide families complete.
-- Tests: 28 passed, 0 failed.
+The bars show mean absolute SHAP attribution proportions; error bars are
+two-sided 95% t-confidence intervals across five independently fitted seeds.
 
-The canonical machine-readable freeze is:
+![Top 15 SHAP features with 95% confidence intervals](results/final_experiments/figures/figure_shap_top15_features.png)
 
-`results/final_experiments/FINAL_RESULTS_FREEZE.json`
+## Repository map
 
-## Reproduce figures
+| Path | Contents |
+|---|---|
+| `data/` | Corrected dataset and fixed random/sequence-cluster splits |
+| `src/` | Featurization, data, evaluation, and benchmark code |
+| `configs/benchmark/` | Final 50-trial primary benchmark protocol |
+| `scripts/` | Experiments, statistics, SHAP, freezing, and figure generation |
+| `tests/` | Regression and pipeline validation tests |
+| `results/final_experiments/` | Frozen runs, predictions, statistics, and diagnostics |
+| `results/final_experiments/summary_tables/` | Publication-facing result tables |
+| `results/final_experiments/figures/` | PNG/PDF figures and plotted source data |
+
+## Reproduce the outputs
+
+Use the project virtual environment from the repository root:
 
 ```bash
+# Regenerate SHAP tables, including seed-level feature attributions and 95% CIs
+.venv/bin/python scripts/run_shap.py
+
+# Regenerate all publication figures and their checksummed manifest
 .venv/bin/python scripts/generate_figures.py
 ```
 
-Final PNG/PDF figures and their source data are written to:
+The canonical machine-readable result freeze is
+[`FINAL_RESULTS_FREEZE.json`](results/final_experiments/FINAL_RESULTS_FREEZE.json).
 
-`results/final_experiments/figures/`
-
-## Validation
+## Validate the repository
 
 ```bash
 .venv/bin/python -m pytest -q
 .venv/bin/python -m py_compile scripts/*.py
 ```
+
+## License
+
+See [`LICENSE`](LICENSE).

@@ -58,9 +58,13 @@ def main():
     for (rep,g),z in gd.groupby(['representation_id','group']):
       m,sd,lo,hi=ci(z.attribution_proportion);sums.append({'representation_id':rep,'group':g,'mean':m,'sample_sd':sd,'ci95_low':lo,'ci95_high':hi,'n_seeds':5})
     sd=pd.DataFrame(sums);sd[sd.group.isin(['A','B','C'])].to_csv(OUT/'group_summary_with_ci.csv',index=False);sd[sd.group.isin(['B1','B2','B3'])].to_csv(OUT/'subgroup_summary_with_ci.csv',index=False)
-    fd=pd.DataFrame(feat_rows); top=[]
+    fd=pd.DataFrame(feat_rows);fd.to_csv(OUT/'seed_level_feature_attribution.csv',index=False);top=[]
     for rep,z in fd.groupby('representation_id'):
-      q=z.groupby(['feature','subblock'],as_index=False).proportion.mean()
+      rows=[]
+      for (feature,subblock),values in z.groupby(['feature','subblock']):
+        m,feature_sd,lo,hi=ci(values.proportion)
+        rows.append({'feature':feature,'subblock':subblock,'proportion':m,'sample_sd':feature_sd,'ci95_low':lo,'ci95_high':hi,'n_seeds':len(values)})
+      q=pd.DataFrame(rows)
       selections=[('overall',q.nlargest(15,'proportion'))]
       for g in ['A','B','C']:
         if g=='B': u=q[q.subblock.isin(['B1','B2','B3'])]
