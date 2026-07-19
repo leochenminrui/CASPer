@@ -63,7 +63,7 @@ def shap_top15():
  fig,ax=plt.subplots(figsize=(9.5,6));z=t.iloc[::-1];labels=[SHAP_LABEL.get(x,x) for x in z.feature]
  ax.barh(labels,z.proportion,color=[SHAP_COL[x] for x in z.subblock],alpha=.9)
  ax.errorbar(z.proportion,labels,xerr=[z.proportion-z.ci95_low,z.ci95_high-z.proportion],fmt='none',ecolor='#222222',elinewidth=1,capsize=2.5,capthick=1,zorder=3)
- legend_labels={'A':'whole-peptide chemistry','B1':'anchor-position statistics','B2':'anchor-residue identity','B3':'anchor-residue properties','C':'attachment-aware multi-edit context'}
+ legend_labels={'A':'whole-peptide chemistry','B1':'anchor-position statistics','B2':'anchor-residue identity','B3':'anchor-residue properties','C':'scaffold/attachment/multi-edit context'}
  ax.legend(handles=[Patch(facecolor=SHAP_COL[g],label=f'Group {g}: {legend_labels[g]}') for g in ['A','B1','B2','B3','C']],loc='lower right',frameon=True,fontsize=8)
  ax.set_xlabel('Mean absolute SHAP proportion across five seeds')
  ax.set_title('Top individual descriptors in the complete A+B+C representation')

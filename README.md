@@ -27,7 +27,8 @@ reproducible repository.
 
 *Top individual descriptors in the complete A+B+C representation. Bars show
 mean absolute SHAP proportions across five independently fitted seeds; error
-bars indicate two-sided 95% t-confidence intervals.*
+bars indicate two-sided 95% t-confidence intervals. The legend definition is
+**Group C: scaffold/attachment/multi-edit context**.*
 
 ## Repository map
 
