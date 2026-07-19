@@ -23,10 +23,11 @@ reproducible repository.
 
 ## Key result visualization
 
-The bars show mean absolute SHAP attribution proportions; error bars are
-two-sided 95% t-confidence intervals across five independently fitted seeds.
-
 ![Top 15 SHAP features with 95% confidence intervals](results/final_experiments/figures/figure_shap_top15_features.png)
+
+*Top individual descriptors in the complete A+B+C representation. Bars show
+mean absolute SHAP proportions across five independently fitted seeds; error
+bars indicate two-sided 95% t-confidence intervals.*
 
 ## Repository map
 
