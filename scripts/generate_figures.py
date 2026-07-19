@@ -5,6 +5,7 @@ import hashlib
 import numpy as np,pandas as pd
 import matplotlib;matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
 import seaborn as sns
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,6 +16,16 @@ ORDER=['A','B','C','A+B','A+C','B+C','A+B+C']
 LABEL={'A':'Chemistry','B':'Site','C':'Context','A+B':'Chemistry + Site','A+C':'Chemistry + Context','B+C':'Site + Context','A+B+C':'Chemistry + Site + Context'}
 SHORT={'A':'Chemistry','B':'Site','C':'Context','A+B':'Chem. + Site','A+C':'Chem. + Context','B+C':'Site + Context','A+B+C':'Chem. + Site + Context'}
 COL={'A':'#0072B2','B':'#E69F00','C':'#56B4E9','A+B':'#009E73','A+C':'#CC79A7','B+C':'#D55E00','A+B+C':'#332288'}
+SHAP_COL={'A':'#0072B2','B1':'#E69F00','B2':'#009E73','B3':'#CC79A7','C':'#56B4E9'}
+SHAP_LABEL={
+ 'edit_n_methylation':'N-methylation edit','logp':'LogP','anchor_pos_std':'SD of normalized anchor position',
+ 'num_rotatable_bonds':'Rotatable bonds','mol_weight':'Molecular weight','tpsa':'TPSA',
+ 'anchor_pos_mean':'Mean normalized anchor position','anchor_c_terminal_count':'C-terminal anchor count',
+ 'anchor_res_L':'Leucine at anchor sites','num_h_donors':'Hydrogen-bond donors',
+ 'edit_d_amino_acid':'D-amino-acid edit','anchor_res_P':'Proline at anchor sites',
+ 'num_aliphatic_rings':'Aliphatic rings','anchor_density':'Anchor density',
+ 'cyclization_ring_size':'Cyclization ring size',
+}
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':9,'axes.titlesize':11,'axes.labelsize':10,'savefig.dpi':300,'figure.dpi':150,'pdf.fonttype':42})
 def save(fig,name):
  fig.tight_layout();fig.savefig(OUT/f'{name}.png',bbox_inches='tight');fig.savefig(OUT/f'{name}.pdf',bbox_inches='tight');plt.close(fig);print(name)
@@ -45,7 +56,18 @@ def shap_figs():
  for ax,z,order,title in [(axs[0],g,['A','B','C'],'Conceptual groups'),(axs[1],pd.concat([g[g.group.isin(['A','C'])],b]),['A','B1','B2','B3','C'],'Descriptor subblocks')]:
   z=z.set_index('group').loc[order];x=np.arange(len(order));ax.bar(x,z['mean'],color=['#0072B2','#E69F00','#56B4E9'] if len(order)==3 else ['#0072B2','#E69F00','#009E73','#CC79A7','#56B4E9']);ax.errorbar(x,z['mean'],yerr=[z['mean']-z.ci95_low,z.ci95_high-z['mean']],fmt='none',ecolor='black',capsize=3);ax.set_xticks(x);ax.set_xticklabels(order);ax.set_title(title);ax.grid(axis='y',ls='--',alpha=.25)
  axs[0].set_ylabel('Absolute SHAP attribution proportion\nmean and 95% CI across five seeds');save(fig,'figure_shap_group_and_subblock')
- t=pd.read_csv(RES/'shap/top_features.csv');t=t[(t.representation_id=='A+B+C')&(t.scope=='overall')].sort_values('rank').head(15);t.to_csv(DATA/'shap_top15.csv',index=False);fig,ax=plt.subplots(figsize=(7.5,5.8));z=t.iloc[::-1];colors=[{'A':'#0072B2','B1':'#E69F00','B2':'#009E73','B3':'#CC79A7','C':'#56B4E9'}[x] for x in z.subblock];ax.barh(z.feature,z.proportion,color=colors,alpha=.9);ax.errorbar(z.proportion,z.feature,xerr=[z.proportion-z.ci95_low,z.ci95_high-z.proportion],fmt='none',ecolor='#222222',elinewidth=1,capsize=2.5,capthick=1,zorder=3);ax.set_xlabel('Mean absolute SHAP proportion (95% CI across five seeds)');ax.set_title('Top individual descriptors: complete representation');ax.grid(axis='x',ls='--',alpha=.25);ax.set_axisbelow(True);save(fig,'figure_shap_top15_features')
+ shap_top15()
+
+def shap_top15():
+ t=pd.read_csv(RES/'shap/top_features.csv');t=t[(t.representation_id=='A+B+C')&(t.scope=='overall')].sort_values('rank').head(15);t.to_csv(DATA/'shap_top15.csv',index=False)
+ fig,ax=plt.subplots(figsize=(9.5,6));z=t.iloc[::-1];labels=[SHAP_LABEL.get(x,x) for x in z.feature]
+ ax.barh(labels,z.proportion,color=[SHAP_COL[x] for x in z.subblock],alpha=.9)
+ ax.errorbar(z.proportion,labels,xerr=[z.proportion-z.ci95_low,z.ci95_high-z.proportion],fmt='none',ecolor='#222222',elinewidth=1,capsize=2.5,capthick=1,zorder=3)
+ legend_labels={'A':'whole-peptide chemistry','B1':'anchor-position statistics','B2':'anchor-residue identity','B3':'anchor-residue properties','C':'attachment-aware multi-edit context'}
+ ax.legend(handles=[Patch(facecolor=SHAP_COL[g],label=f'Group {g}: {legend_labels[g]}') for g in ['A','B1','B2','B3','C']],loc='lower right',frameon=True,fontsize=8)
+ ax.set_xlabel('Mean absolute SHAP proportion across five seeds')
+ ax.set_title('Top individual descriptors in the complete A+B+C representation')
+ ax.grid(axis='x',ls='--',alpha=.25);ax.set_axisbelow(True);save(fig,'figure_shap_top15_features')
 
 def time_forward():
  p=pd.read_csv(RES/'time_forward/model_performance_with_ci.csv');p=p[p.metric=='spearman'];s=pd.read_csv(RES/'time_forward/similarity_diagnostics.csv');c=pd.read_csv(RES/'time_forward/cutoff_statistics.csv');p.to_csv(DATA/'time_forward_spearman.csv',index=False);s.to_csv(DATA/'time_forward_similarity.csv',index=False);c.to_csv(DATA/'time_forward_cutoff_stats.csv',index=False)
@@ -75,11 +97,14 @@ def predicted_observed():
  for ax in axs[:,0]:ax.set_ylabel('Mean prediction across five seeds')
  save(fig,'figure_predicted_vs_observed')
 
-def main():
- ablation();split_slope();estimators();shap_figs();time_forward();scaffold();predicted_observed()
+def write_manifest():
  rows=[]
  for path in sorted([*OUT.glob('*.png'),*OUT.glob('*.pdf')]):
   rows.append({'figure':path.stem,'format':path.suffix[1:],'path':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'source_data_dir':str(DATA.relative_to(ROOT))})
  pd.DataFrame(rows).to_csv(OUT/'figure_manifest.csv',index=False)
+
+def main():
+ ablation();split_slope();estimators();shap_figs();time_forward();scaffold();predicted_observed()
+ write_manifest()
  print(f'Figures written to {OUT}')
 if __name__=='__main__':main()
