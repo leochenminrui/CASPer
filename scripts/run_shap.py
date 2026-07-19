@@ -22,9 +22,9 @@ MODELS={
 
 def group(name):
     if name in {'mol_weight','logp','tpsa','num_h_acceptors','num_h_donors','num_rotatable_bonds','num_aromatic_rings','num_aliphatic_rings','num_edits','num_edit_families'}: return 'A'
-    if name.startswith('anchor_count') or name.startswith('anchor_density') or name.startswith('anchor_pos'): return 'B1'
+    if name in {'anchor_count_total','anchor_count_unique','anchor_density','anchor_pos_mean','anchor_pos_std','anchor_pos_range'}: return 'B1'
     if name.startswith('anchor_res_'): return 'B2'
-    if name.startswith('anchor_'): return 'B3'
+    if name in {'anchor_hydrophobic_frac','anchor_charged_frac','anchor_polar_frac','anchor_aromatic_frac','anchor_small_frac','anchor_proline_frac','anchor_terminal_frac','anchor_n_terminal_count','anchor_c_terminal_count'}: return 'B3'
     return 'C'
 
 def ci(a):

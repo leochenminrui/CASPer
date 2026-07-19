@@ -516,7 +516,7 @@ A+B+C,0,edit_acetylation,C,0.0,0.0
 A+B+C,0,edit_amidation,C,0.0,0.0
 A+B+C,0,edit_phosphorylation,C,0.0,0.0
 A+B+C,0,edit_other_types,C,0.0,0.0
-A+B+C,0,anchor_pair_count,B3,0.0,0.0
+A+B+C,0,anchor_pair_count,C,0.0,0.0
 A+B+C,0,cyclization_ring_size,C,0.02467801421880722,0.01769276149570942
 A+B+C,0,edit_anchor_overlap,C,0.027059076353907585,0.019399849697947502
 A+B+C,0,sequence_length,C,0.0033214259892702103,0.002381277270615101
@@ -589,7 +589,7 @@ A+B+C,1,edit_acetylation,C,0.0,0.0
 A+B+C,1,edit_amidation,C,0.0,0.0
 A+B+C,1,edit_phosphorylation,C,0.0,0.0
 A+B+C,1,edit_other_types,C,2.248595774290152e-05,1.531763882667292e-05
-A+B+C,1,anchor_pair_count,B3,0.0,0.0
+A+B+C,1,anchor_pair_count,C,0.0,0.0
 A+B+C,1,cyclization_ring_size,C,0.03395813703536987,0.02313259057700634
 A+B+C,1,edit_anchor_overlap,C,0.025288769975304604,0.017226940020918846
 A+B+C,1,sequence_length,C,0.007421327289193869,0.005055475514382124
@@ -662,7 +662,7 @@ A+B+C,2,edit_acetylation,C,0.0,0.0
 A+B+C,2,edit_amidation,C,0.0,0.0
 A+B+C,2,edit_phosphorylation,C,0.0,0.0
 A+B+C,2,edit_other_types,C,0.00011711008119164035,7.34011919121258e-05
-A+B+C,2,anchor_pair_count,B3,0.0,0.0
+A+B+C,2,anchor_pair_count,C,0.0,0.0
 A+B+C,2,cyclization_ring_size,C,0.03706901893019676,0.02323378250002861
 A+B+C,2,edit_anchor_overlap,C,0.03218787536025047,0.020174425095319748
 A+B+C,2,sequence_length,C,0.009143859148025513,0.005731104873120785
@@ -735,7 +735,7 @@ A+B+C,3,edit_acetylation,C,0.0,0.0
 A+B+C,3,edit_amidation,C,0.0,0.0
 A+B+C,3,edit_phosphorylation,C,0.0,0.0
 A+B+C,3,edit_other_types,C,0.0,0.0
-A+B+C,3,anchor_pair_count,B3,0.00016073152073659003,0.00010730418580351397
+A+B+C,3,anchor_pair_count,C,0.00016073152073659003,0.00010730418580351397
 A+B+C,3,cyclization_ring_size,C,0.041452180594205856,0.027673430740833282
 A+B+C,3,edit_anchor_overlap,C,0.02786603569984436,0.018603336066007614
 A+B+C,3,sequence_length,C,0.00946874637156725,0.006321324966847897
@@ -808,7 +808,7 @@ A+B+C,4,edit_acetylation,C,0.0,0.0
 A+B+C,4,edit_amidation,C,0.0,0.0
 A+B+C,4,edit_phosphorylation,C,0.0,0.0
 A+B+C,4,edit_other_types,C,0.00011441421520430595,7.051180000416934e-05
-A+B+C,4,anchor_pair_count,B3,3.1563351512886584e-05,1.9452028936939314e-05
+A+B+C,4,anchor_pair_count,C,3.1563351512886584e-05,1.9452028936939314e-05
 A+B+C,4,cyclization_ring_size,C,0.03411893919110298,0.02102700062096119
 A+B+C,4,edit_anchor_overlap,C,0.03739861771464348,0.023048218339681625
 A+B+C,4,sequence_length,C,0.01268306840211153,0.00781638827174902
