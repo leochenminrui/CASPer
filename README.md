@@ -1,3 +1,6 @@
+<div align="center">
+
+
 # CASPer
 
 > Reproducible benchmarking for **Site-Conditioned Edit Chemistry for Cyclic
@@ -56,8 +59,7 @@ The canonical machine-readable result freeze is
 ## Validate the repository
 
 ```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python -m py_compile scripts/*.py
+python scripts/generate_figures.py
 ```
 
 ## License
